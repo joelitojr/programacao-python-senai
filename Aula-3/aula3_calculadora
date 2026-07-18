@@ -1,0 +1,45 @@
+# # # OBJETIVO - MÉDIA DE NOTAS 
+
+# nota_1 = 2
+# nota_2 = 7
+# nota_3 = 7
+# print( 'Nota 1:' ,nota_1 )
+# print( 'Nota 2:' ,nota_2 )
+# print( 'Nota 3:' ,nota_3 )
+# print( '' )
+
+# media = ( nota_1 + nota_2 + nota_3 ) / 3
+# print( 'Media :' , round( media , 2 ) )
+# print( '' )
+
+# aprovado    = media >= 7
+# recuperacao = media >= 5 and media < 7
+# reprovado   = media <  5
+
+# print( 'Situação do Aluno'          )
+# print( 'Aprovado   :' , aprovado    )
+# print( 'Recuperação:' , recuperacao )
+# print( 'Reprovado  :' , reprovado   )
+# print( '' )
+
+# resultado = ( media >= 7 and print( 'Aprovado' ) ) or ( media >= 5 and media < 7 and print( 'Recuperação' ) ) or ( media <  5 and print( 'Reprovado' ) )
+# print( '' )
+
+
+# Calculadora - Lição 3 - Atividade 2
+
+n1 = 5
+n2 = 4
+print('Primeiro valor:',n1)
+print('Segundo  valor:',n2)
+print('')
+print('---------------------------')
+print('Calculadora Python')
+soma = n1 + n2 
+print('Soma:',soma)
+subtr  = n1 - n2
+print('Subtração:',subtr)
+multip = n1 * n2
+print('Multiplicação:',subtr)
+divisao = n1 / n2
+print('Divisão:',round(divisao,2))
