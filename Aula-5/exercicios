@@ -1,0 +1,120 @@
+# Aula 5
+
+# # +
+# print('isso é um texto ' + ' ' + '10')
+# # print(10 + 10)
+
+
+
+# # ,
+# print('isso é um texto ',  '10')
+
+
+
+# # % 
+
+
+# print('isso é um texto  %d'%(10))
+
+
+
+# # .format()
+
+
+# print('isso é um texto  {}'.format(10))
+
+
+
+# # f-string
+
+
+# print(f'isso é um texto  {10} ')
+
+
+
+# Exercícios
+
+# 1 
+print('saudacao - Imprima uma mensagem de boas-vindas na tela')
+saudacao = 'Boa noite, Python'
+print(saudacao)
+
+# 2 
+print('')
+print('tipo - Declare uma variável booleana verdadeiro com o valor True e imprima seu tipo')
+vf = True
+print(type(vf))
+
+# 3 
+print('')
+print('multiplicação 1 - Imprima o resultado da multiplicação de dois números decimais de sua escolha')
+nundecmult1 =float(input('primeiro número decimal: '))
+nundecmult2 =float(input('segundo número decimal : '))
+calcdecmult1 = round((nundecmult1 * nundecmult2),4)
+print('resultado: ', calcdecmult1)
+
+# 4 
+print('')
+print('divisão 1 "/" - Imprima o resultado da divisão (/)de dois números inteiros de sua escolha')
+nunintdiv1 =int(input('primeiro número inteiro: '))
+nunintdiv2 =int(input('segundo número inteiro : '))
+calcintdiv1 = round((nunintdiv1 / nunintdiv2),3)
+print('resultado: ', calcintdiv1)
+
+
+# 5 
+print('')
+print('subtração 1 - Imprima o resultado da subtração de dois números inteiros de sua escolha')
+nunintsub1 =int(input('primeiro número inteiro: '))
+nunintsub2 =int(input('segundo número inteiro : '))
+calcintsub1 = round((nunintsub1 - nunintsub2),2)
+print('resultado', calcintsub1)
+
+
+# 6 
+print('')
+print('divisão 2 "//" - Imprima o resultado da divisão (//)inteira de dois números inteiros de sua escolha')
+nunintdiv3 =int(input('primeiro número inteiro: '))
+nunintdiv4 =int(input('segundo número inteiro : '))
+calcintdiv2 = (nunintdiv3 // nunintdiv4)
+print('resultado: ', calcintdiv2)
+
+
+# 7 
+print('')
+print('multiplicação 2 - Imprima o resultado da multiplicação de 4 números decimais de sua escolha')
+nundecmult3 =float(input('primeiro número decimal: '))
+nundecmult4 =float(input('segundo número decimal : '))
+nundecmult5 =float(input('terceiro número decimal: '))
+nundecmult6 =float(input('quarto número decimal : '))
+calcdecmult2 = round((nundecmult3 * nundecmult4 * nundecmult5 * nundecmult6),5)
+print('resultado: ', calcdecmult2)
+
+
+# 8 
+print('')
+print('multiplicação 3 - Declare uma variável numero e atribua um número inteiro. Em seguida, imprima o dobro desse número')
+nundecmult7 =int(input('número inteiro: '))
+calcdecmult3 = (nundecmult7 * 2)
+print('resultado: ', calcdecmult3)
+
+
+# 9
+print('')
+print('multiplicação 3 - Crie um sistema de cadastro com as estruturas que vc já conhece(Use apenas input, print e variavel): nome, email, idade, cidade, gradução, estado civil')
+nome        =     input('nome        : ')
+email       =     input('e-mail      : ')
+idade       = int(input('idade       : '))
+cidade      =     input('cidade      : ')
+graduacao   =     input('graduação   : ')
+estadocivil =     input('estado civil: ')
+print                  ( '')
+print                  ( 'informações cadastrais do cliente')
+print                  ( 'nome        : ' , nome)
+print                  ( 'e-mail      : ' + email)
+print                  (f'idade       :   {idade}' )
+print                  ( 'cidade      :   {}'.format(cidade))
+print                  ( 'graduação   :   %s'%(graduacao))
+print                  ( 'estado civil: ' , estadocivil)
+
+
