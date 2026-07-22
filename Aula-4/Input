@@ -1,0 +1,41 @@
+
+
+
+# 1
+numero =  int(input('numero inteiro: '))
+quadrado =  numero ** 2
+print(quadrado)
+
+
+# 2
+
+
+nome = 'Beatriz'
+sobrenome = 'Alves'
+print(nome +  ' ' + sobrenome)
+print(nome, sobrenome)
+
+
+# 3
+
+
+n1  = int(input('numero inteiro:'))
+n2  = int(input('numero inteiro:'))
+print(str(n1), str(n2))
+
+
+# 4
+
+
+v = 'Python'
+print(v,10)
+
+
+# 5
+
+
+frase = 'Bom dia'
+nome  =  input('Nome: ')
+
+
+print(frase, nome)
