@@ -1,38 +1,25 @@
-# Aula 5
+# # Aula 5
 
 # # +
 # print('isso é um texto ' + ' ' + '10')
 # # print(10 + 10)
 
-
-
 # # ,
 # print('isso é um texto ',  '10')
 
-
-
 # # % 
-
 
 # print('isso é um texto  %d'%(10))
 
-
-
 # # .format()
-
 
 # print('isso é um texto  {}'.format(10))
 
-
-
 # # f-string
-
 
 # print(f'isso é um texto  {10} ')
 
-
-
-# Exercícios
+# # Exercícios
 
 # 1 
 print('saudacao - Imprima uma mensagem de boas-vindas na tela')
