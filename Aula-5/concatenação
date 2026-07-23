@@ -10,20 +10,14 @@ print('isso é um texto ',  '10')
 
 
 # % 
-
-
 print('isso é um texto  %d'%(10))
 
 
 
 # .format()
-
-
 print('isso é um texto  {}'.format(10))
 
 
 
 # f-string
-
-
 print(f'isso é um texto  {10} ')
