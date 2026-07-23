@@ -1,15 +1,12 @@
 var  =  10
 lista  = [1,2,3]
 
-
 # inserir dados
 lista[1] = [1,0,0,5] # 1 dad0 ou lista
 lista.append(10) # inserir no final da lista, um valor ou lista
 lista.insert(0,150) # inserir no indice indicado
 lista.extend([1,2,3,5,5,6,4,5,5]) # inserir varios dados de uma vez  ou lista
 lista += (1,5,6,6,98,6)# inserir varios dados de uma vez  ou lista
-
-
 
 # deletar dados
 lista.remove(150) # remove a partir do dado que vc vê 
@@ -21,8 +18,6 @@ del lista[0:7]
 #    start : stop 
 lista_2 =  lista[0:7]
 
-
-
 # verifica 
 print(len(lista))# tamanho
 print(min(lista))# menor
@@ -31,11 +26,7 @@ print(max(lista))# maior
 lista.reverse()
 print(lista)
 
-
-
-
 lista3 = list(range(1,251))
-
 
 print(lista3)
 
