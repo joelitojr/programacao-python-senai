@@ -1,0 +1,95 @@
+# 1
+print('Calcule o módulo ( % ) de 17 por 4.')
+numdiv1=int(input('Primeiro número - div: '))
+numdiv2=int(input('Segundo  número - div: '))
+calcdiv1 = numdiv1 % numdiv2
+print('Valores informados: ',numdiv1,numdiv2)
+print('Resultado         : ',calcdiv1)
+
+# 2
+print('')
+print('Multiplique 9 por 3 e, em seguida, eleve o resultado ao quadrado.')
+nummult1=int(input('Primeiro número - mult: '))
+nummult2=int(input('Segundo  número - mult: '))
+numquad1=int(input('Terceiro número - quad: '))
+calcmult1 = nummult1 * nummult2
+calcquad1 = calcmult1**numquad1
+print('Valores informados: ',nummult1,nummult2)
+print('Resultados        : ',calcmult1,calcquad1)
+
+# 3
+print('')
+print('Calcule a raiz quadrada de 81.')
+
+
+
+# 4
+print('')
+print('Adicione 20 a 3 vezes 4.')
+
+
+# 5
+print('')
+print('Multiplique 15 por 2 e, em seguida, subtraia 7.')
+nummult3=int(input('Primeiro número - mult: '))
+nummult4=int(input('Segundo  número - mult: '))
+numsub1 =int(input('Terceiro número - sub : '))
+calcmult2= nummult3 * nummult4
+calcsub1 = calcmult2-numsub1
+print('Valores informados: ',nummult3,nummult4,numsub1)
+print('Resultados        : ',calcmult2,calcsub1)
+
+# 6
+print('')
+print('Eleve 5 ao cubo.')
+numcub1=int(input('Primeiro número - cubo: '))
+numcub2=int(input('Segundo  número - cubo: '))
+calccub1 = numcub1**numcub2
+print('Valores informados: ',numcub1,numcub2)
+print('Resultado         : ',calccub1)
+
+# 7
+print('')
+print('Calcule a média de 17, 21 e 25.')
+nummed1=int(input('Primeiro número - med: '))
+nummed2=int(input('Segundo  número - med: '))
+nummed3=int(input('Terceiro número - med: '))
+calcmed1= nummed1 + nummed2 + nummed3
+calcmed2= calcmed1 / 3
+# calcmed3= med(nummed1 + nummed2 + nummed3)17
+print('Valores informados: ',nummed1,nummed2,nummed3)
+print('Resultados        : ',calcmed1,calcmed2)
+
+# 8
+print('')
+print('Multiplique 11 por 2 e adicione 7.')
+nummult5=int(input('Primeiro número - mult: '))
+nummult6=int(input('Segundo  número - mult: '))
+numad1  =int(input('Terceiro número - adic: '))
+calcmult3= nummult5 * nummult6
+calcad1  = calcmult3+numad1
+print('Valores informados: ',nummult5,nummult6,numad1)
+print('Resultados        : ',calcmult3,calcad1)
+
+# 9
+print('')
+print('Subtraia 15 de 3 vezes 8 e divida o resultado por 2.')
+nummult7=int(input('Primeiro número - mult: '))
+nummult8=int(input('Segundo  número - mult: '))
+numsub2 =int(input('Terceiro número - sub : '))
+numdiv3 =int(input('Terceiro número - div: '))
+calcmult3= nummult7 * nummult8
+calcsub2 = calcmult3- numsub2
+calcdiv2 = calcsub2 / numdiv3
+print('Valores informados: ',nummult7,nummult8,numsub2,numdiv3)
+print('Resultados        : ',calcmult3,calcsub2,calcdiv2)
+
+# 10
+print('')
+print('Eleve 2 à potência de 10.')
+numdez1=int(input('Primeiro número - decima: '))
+numdez2=int(input('Segundo  número - decima: '))
+calcdez1 = numdez1**numdez2
+print('Valores informados: ',numdez1,numdez2)
+print('Resultado         : ',calcdez1)
+
