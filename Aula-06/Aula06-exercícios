@@ -34,7 +34,7 @@ nummult4=int(input('Segundo  número - mult: '))
 numad1  =int(input('Terceiro número - adic: '))
 calcmult2= nummult3 * nummult4
 calcad1  = calcmult2+numad1
-print('Valores informados: ',nummult3,nummult4,numad2)
+print('Valores informados: ',nummult3,nummult4,numad1)
 print('Resultados        : ',calcmult2,calcad1)
 
 # 5
