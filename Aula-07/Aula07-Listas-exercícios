@@ -5,32 +5,35 @@ print('Exercício 0: Escreva um programa que use a função range() para gerar o
 listarange1=list(range(2,22,2))
 # for element in listarange1
 #    print(element)
-print(listarange1)
+print('Lista Range pares: ',listarange1)
 
 # # 1
 print('')
 print('Exercício 1: Crie uma lista chamada numeros que contenha os números inteiros de 1 a 10 e imprima-a na tela.')
+# numeros=list[1,2,3,4,5,6,7,8,9,10]
 numeros=list(range(1,11,1))
-print(numeros)
+print('Lista de números: ',numeros)
 
 # # 2
 print('')
 print('Exercício 2: Acesse e imprima o terceiro elemento da lista numeros.')
+print('Lista de números: ',numeros)
 terceiro_elemento=numeros[2]
-print(terceiro_elemento)
+print('Lista de números - Terceiro elemento: ',terceiro_elemento)
 
 # # 3
 print('')
 print('Exercício 3: Adicione o número 9 à lista numeros e imprima a lista atualizada.')
+print('Lista de números: ',numeros)
 numeros.append(9)
-print(numeros)
+print('Lista de números - Append: ',numeros)
 
 # # 4
 print('')
 print('Exercício 4: Remova o número 5 da lista numeros e imprima a lista resultante.')
+print('Lista de números: ',numeros)
 numeros.remove(5)
-print(numeros)
-
+print('Lista de números - Remove: ',numeros)
 
 # # 5
 print('')
@@ -39,6 +42,7 @@ carro1=input('Informe o primeiro carro: ')
 carro2=input('Informe o segundo  carro: ')
 carro3=input('Informe o terceiro carro: ')
 carros=list[carro1,carro2,carro3]
-print('lista de números: ',numeros)
-print('lista de carros : ',carros)
+print('Lista de números: ',numeros)
+print('Lista de carros : ',carros)
 print('Listas concatenadas: ',numeros,carros)
+
