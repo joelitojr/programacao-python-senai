@@ -20,24 +20,33 @@ print('Resultados        : ',calcmult1,calcquad1)
 # 3
 print('')
 print('Calcule a raiz quadrada de 81.')
-
-
+numraiz1=int(input('Primeiro número - raiz: '))
+numraiz2=float(input('Segundo  número - raiz: '))
+calcraiz1 = numraiz1 ** numraiz2
+print('Valores informados: ',numraiz1,numraiz2)
+print('Resultado         : ',calcraiz1)
 
 # 4
 print('')
 print('Adicione 20 a 3 vezes 4.')
-
+nummult3=int(input('Primeiro número - mult: '))
+nummult4=int(input('Segundo  número - mult: '))
+numad1  =int(input('Terceiro número - adic: '))
+calcmult2= nummult3 * nummult4
+calcad1  = calcmult2+numad1
+print('Valores informados: ',nummult3,nummult4,numad2)
+print('Resultados        : ',calcmult2,calcad1)
 
 # 5
 print('')
 print('Multiplique 15 por 2 e, em seguida, subtraia 7.')
-nummult3=int(input('Primeiro número - mult: '))
-nummult4=int(input('Segundo  número - mult: '))
+nummult5=int(input('Primeiro número - mult: '))
+nummult6=int(input('Segundo  número - mult: '))
 numsub1 =int(input('Terceiro número - sub : '))
-calcmult2= nummult3 * nummult4
-calcsub1 = calcmult2-numsub1
-print('Valores informados: ',nummult3,nummult4,numsub1)
-print('Resultados        : ',calcmult2,calcsub1)
+calcmult3= nummult6 * nummult5
+calcsub1 = calcmult3-numsub1
+print('Valores informados: ',nummult5,nummult6,numsub1)
+print('Resultados        : ',calcmult3,calcsub1)
 
 # 6
 print('')
@@ -63,26 +72,26 @@ print('Resultados        : ',calcmed1,calcmed2)
 # 8
 print('')
 print('Multiplique 11 por 2 e adicione 7.')
-nummult5=int(input('Primeiro número - mult: '))
-nummult6=int(input('Segundo  número - mult: '))
-numad1  =int(input('Terceiro número - adic: '))
-calcmult3= nummult5 * nummult6
-calcad1  = calcmult3+numad1
-print('Valores informados: ',nummult5,nummult6,numad1)
-print('Resultados        : ',calcmult3,calcad1)
+nummult7=int(input('Primeiro número - mult: '))
+nummult8=int(input('Segundo  número - mult: '))
+numad2  =int(input('Terceiro número - adic: '))
+calcmult4= nummult7 * nummult8
+calcad2  = calcmult4+numad2
+print('Valores informados: ',nummult7,nummult8,numad2)
+print('Resultados        : ',calcmult4,calcad2)
 
 # 9
 print('')
 print('Subtraia 15 de 3 vezes 8 e divida o resultado por 2.')
-nummult7=int(input('Primeiro número - mult: '))
-nummult8=int(input('Segundo  número - mult: '))
+nummult9=int(input('Primeiro número - mult: '))
+nummult10=int(input('Segundo  número - mult: '))
 numsub2 =int(input('Terceiro número - sub : '))
 numdiv3 =int(input('Terceiro número - div: '))
-calcmult3= nummult7 * nummult8
+calcmult5= nummult9 * nummult10
 calcsub2 = calcmult3- numsub2
 calcdiv2 = calcsub2 / numdiv3
-print('Valores informados: ',nummult7,nummult8,numsub2,numdiv3)
-print('Resultados        : ',calcmult3,calcsub2,calcdiv2)
+print('Valores informados: ',nummult9,nummult10,numsub2,numdiv3)
+print('Resultados        : ',calcmult5,calcsub2,calcdiv2)
 
 # 10
 print('')
