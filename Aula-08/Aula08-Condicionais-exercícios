@@ -1,0 +1,97 @@
+# # 1 
+print('1 Peça para o usuário digitar um número, verifique se um número é positivo, negativo ou zero.')
+
+
+
+# # 2
+print('')
+print('2 Peça para o usuário digitar a idade, verifique se uma pessoa pode votar com base na idade.')
+idadeeleitor=int(input('Informe a idade: '))
+idademinvoto=18
+print('Idade mínima para votar: ',idademinvoto)
+if idadeeleitor >= idademinvoto:
+   print('Eleitor pode votar !')
+else: 
+   print('Eleitor não pode votar !')
+
+
+# # 3
+print('')
+print('3 Declara uma variável com um número qualquer, determine se um número é par ou ímpar.')
+numeroparimpar=int(input('Informe um numero: '))
+calcparimpar=numeroparimpar%2
+print('Resultado da divisao por 2: ',calcparimpar)
+if calcparimpar == 0:
+   print('O número é par !') 
+else: 
+   print('O número é Ímpar !')
+
+
+# # 4
+print('')
+print('4 Usuário vai digitar 3  números, para criar um triângulo, verifique se um triângulo é equilátero, isósceles ou escaleno:')
+print('Um triângulo é chamado de equilátero se todos os lados possuem a mesma medida.') 
+print('Um triângulo é chamado de isósceles se dois lados possuem a mesma medida. ')
+print('Um triângulo é chamado de escaleno se todos os lados possuem medidas diferentes.')
+triangulolado1=int(input('Informe o tamanho do primeiro lado do triângulo: '))
+triangulolado2=int(input('Informe o tamanho do segundo  lado do triângulo: '))
+triangulolado3=int(input('Informe o tamanho do terceiro lado do triângulo: '))
+if (triangulolado1 == triangulolado2) and (triangulolado1 == triangulolado3):
+   print('O triângulo é equilátero !')
+elif (triangulolado1 != triangulolado2) and (triangulolado1 != triangulolado3) and (triangulolado2 != triangulolado3):
+   print('O triângulo é escaleno !')
+else:
+   print('O triângulo é isósceles !')
+
+
+# # 5
+print('')
+print('Determine se um número é múltiplo de 5 e 7.')
+print('')
+print('3 Declara uma variável com um número qualquer, determine se um número é par ou ímpar.')
+numeromult5e7=int(input('Informe um numero: '))
+calcmult5=numeromult5e7%5
+calcmult7=numeromult5e7%7
+print('Resultado da divisao por 5: ',calcmult5)
+print('Resultado da divisao por 7: ',calcmult7)
+if (calcmult5 == 0) and (calcmult7 == 0):
+   print('O número é múltiplo de 5 e de 7 !')
+elif (calcmult5 == 0):
+   print('O número é múltiplo de 5 !')
+elif (calcmult7 == 0):
+   print('O número é múltiplo de 7 !')
+else: 
+   print('O número não é múltiplo de 5 e nem de 7 !')
+
+
+
+# # 6
+print('')
+print('Verifique se um número é positivo e maior que 10')
+numeropos10=int(input('Informe um numero: '))
+if (numeropos10 >= 0) and (numeropos10 > 10):
+   print('O número é positivo e maior que 10 !')
+elif (numeropos10 >= 0) and (numeropos10 == 10):
+   print('O número é positivo e igual a 10')
+elif (numeropos10 >= 0) and (numeropos10 < 10):
+   print('O número é positivo e menor que 10')
+else: 
+   print('O número não é positivo e nem maior que 10 !')
+
+
+# # 7
+print('')
+print('Verifique se um número é divisível por 3 ou 5.')
+numeromult3e5=int(input('Informe um numero: '))
+calcmult3=numeromult3e5%3
+calcmult5=numeromult3e5%5
+print('Resultado da divisao por 3: ',calcmult3)
+print('Resultado da divisao por 5: ',calcmult5)
+if (calcmult3 == 0) and (calcmult5 == 0):
+   print('O número é divisível por 3 e por 5 !')
+elif (calcmult3 == 0):
+   print('O número é divisível por 3 !')
+elif (calcmult5 == 0):
+   print('O número é divisível por 5 !')
+else: 
+   print('O número não é divisível por 3 e nem por 5 !')
