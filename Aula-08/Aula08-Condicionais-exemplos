@@ -1,0 +1,17 @@
+# estruturas de fluxo de controle 
+
+
+# if condição == Verdade(True):
+#     vai fazer isso
+ 
+
+
+numero = int(input('nº: '))
+
+
+if numero > 0 :
+   print('positivo')
+elif numero < 0: 
+   print('negativo')   
+else: 
+   print('zero')
