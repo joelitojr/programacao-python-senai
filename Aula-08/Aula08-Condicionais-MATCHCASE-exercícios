@@ -1,0 +1,10 @@
+# 1
+print('Aula 08 - Condicionais - MATCH CASE - Verificar se uma string está vazia ou não')
+texto1 = str(input('Informe o texto: '))
+
+match texto1:
+    case '':
+        print('Texto não informado ( VAZIO ) !',texto1)
+    case _:
+        print('Texto informado: ',texto1)  
+
