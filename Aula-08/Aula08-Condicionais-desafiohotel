@@ -1,24 +1,50 @@
-# # Aula 08 - Condicionais - Desafio Hotel
+# Aula 08 - Condicionais - Desafio Hotel
 print('')
 print('Aula 08 - Condicionais - Desafio Hotel')
 hotel={
     'cad_cliente1':{
-                input('Informe o nome do primeiro cliente: '):int(input(' a idade: ')):int(input(' e a quantidade de diárias: '))
+                input('Informe o nome do primeiro cliente: '),
+                int(input(' a idade: ')),
+                int(input(' e a quantidade de diárias: '))
     },
     'cad_cliente2':{
-                input('Informe o nome do segundo  cliente: '):int(input(' a idade: ')):int(input(' e a quantidade de diárias: '))
+                input('Informe o nome do segundo  cliente: '),
+                int(input(' a idade: ')),
+                int(input(' e a quantidade de diárias: '))
     },
     'cad_cliente3':{
-                input('Informe o nome do terceiro cliente: '):int(input(' a idade: ')):int(input(' e a quantidade de diárias: '))     
+                input('Informe o nome do terceiro cliente: '),
+                int(input(' a idade: ')),
+                int(input(' e a quantidade de diárias: '))     
     },
     'reserv_quarto1':{
-                input('Informe o número do primeiro quarto: '):input(' o tipo do aposento: '):float(input(' o valor da diária: '))
+                input('Informe o número do primeiro quarto: '),
+                input(' o tipo do aposento: '),
+                float(input(' o valor da diária: '))
     },
-                input('Informe o número do segundo  quarto: '):input(' o tipo do aposento: '):float(input(' o valor da diária: '))
+    'reserv_quarto2':{
+                input('Informe o número do segundo  quarto: '),
+                input(' o tipo do aposento: '),
+                float(input(' o valor da diária: '))
     },
-                input('Informe o número do terceiro quarto: '):input(' o tipo do aposento: '):float(input(' o valor da diária: '))
-    },
+    'reserv_quarto3':{
+                input('Informe o número do terceiro quarto: '),
+                input(' o tipo do aposento: '),
+                float(input(' o valor da diária: '))
+    }
 }
 print('')
 print('Hotel: ',hotel)
 print('')
+
+
+# ACESSO:
+
+login_nome = input('Digite seu nome >>')
+# senha_acesso = input('Digite sua senha >> ')
+
+# if login_nome in banco_dados['hotel'] and senha_acesso in banco_dados['senhas']:
+if login_nome in hotel:
+    print('Seja bem vindo ao sistema!')
+else:
+    print('Acesso negado, tente novamente!')
