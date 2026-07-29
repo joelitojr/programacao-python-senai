@@ -1,1 +1,56 @@
-# 1
+# 1 - Loop - WHILE
+
+import random
+
+# escolha_pc = random.choice(opcao_pc)
+# print(escolha_pc)
+chance=3
+ind=1
+# for chance in range(1,4):
+
+while ind <= chance:
+#    opcao_pc  =  ['✂️','🪨', '🧻']
+    print('')    
+    print('Chance: ',chance)
+    print('Tentativa número: ',ind)
+    opcao_pc  =  ['1']
+    escolha_pc = random.choice(opcao_pc)
+    # print(escolha_pc)
+    minha_escolha = input('Escolha>>')
+    print('Vc escolheu', minha_escolha)
+    if escolha_pc == minha_escolha:
+#        print('Acertou vc escolheu', minha_escolha)
+        print('EMPATE')
+        print('A maquina escolheu ',escolha_pc)
+#        ind = ind - 1
+#        chance = chance + 1
+#        break
+    else:
+        ind = ind + 1
+        print('Errou feio, vc escolheu...', minha_escolha)
+        print('A maquina escolheu ',escolha_pc)
+else:
+    print('Chances esgotadas')
+
+
+
+# 2 - Loop - WHILE
+
+escolha =  input('Deseja acessar o sistema?')
+
+
+while escolha == 'sim'.upper():
+    print('Seja bem vindo ao sistema')
+    dado = input('Dado: ')
+    l.append(dado)
+    print(l)
+    escolha =  input('Deseja CONTINUAR?')
+else:
+    print('obrigada volte sempre')   
+
+
+
+
+
+
+
