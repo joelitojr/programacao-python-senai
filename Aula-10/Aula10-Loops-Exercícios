@@ -35,3 +35,64 @@ print('Inserir notas (se Senha correta)')
 print('Fazer a média')
 print('- Utilize ***loops for, while, condicionais, variáveis, listas, tuplas ou dicionários…***')
 print('Ao finalizar o código, insira na borda do script, no última linha: input(’Digite enter para sair’)')
+print('SISTEMA DE NOTAS DE ALUNOS - Visão do Professor' \
+      '')
+# Configuração de acesso
+SENHA_CORRETA = "123"
+tentativas_restantes = 3
+
+print("--- CONTROLE DE ACESSO DO PROFESSOR ---")
+
+# Loop de controle de acesso
+while tentativas_restantes > 0:
+    senha = input("Digite a senha de acesso: ")
+    
+    if senha == SENHA_CORRETA:
+        print("\nAcesso concedido! Bem-vindo, professor.")
+        break
+    else:
+        tentativas_restantes -= 1
+        if tentativas_restantes > 0:
+            print(f"Senha incorreta! Você tem mais {tentativas_restantes} chance(s).")
+        else:
+            print("Senha bloqueada! Sistema encerrado.")
+            exit() # Interrompe totalmente o processamento do programa
+
+# Menu do sistema de notas (só executa se o login estiver correto)
+print("\n--- SISTEMA DE NOTAS DOS ALUNOS ---")
+
+alunos=['João','Maria','José','Pedro']
+print('Lista inicial de alunos: ',alunos)
+
+while True:
+    nome = input("\nDigite o nome do aluno (ou 'sair' para encerrar): ")
+        
+    if nome == 'sair':
+        print("Sistema encerrado com sucesso.")
+        break
+    elif nome not in alunos:
+        alunos.append(nome)
+        print('Lista de alunos atualizada: ',alunos)
+
+
+    # Coleta das três notas do aluno
+    nota1 = float(input(f"Digite a 1ª nota de {nome}: "))
+    nota2 = float(input(f"Digite a 2ª nota de {nome}: "))
+    nota3 = float(input(f"Digite a 3ª nota de {nome}: "))
+    
+    # Cálculo da média aritmética
+    media = (nota1 + nota2 + nota3) / 3
+    
+    # Condicionais para avaliar a situação baseada na média
+    if media >= 7.0:
+        situacao = "Aprovado"
+    elif media >= 5.0:
+        situacao = "Recuperação"
+    else:
+        situacao = "Reprovado"
+        
+    # Exibição do resultado detalhado
+    print(f"\nAluno: {nome}")
+    print(f"Média Final: {media:.1f}")
+    print(f"Situação: {situacao}")
+
