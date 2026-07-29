@@ -24,4 +24,14 @@ else:
 
 
 # 3 
-
+print('')
+print('ATIVIDADE 2 - 1 - Crie um sistema de notas alunos, com as seguintes operações: Utilize While ou for')
+print('Sistema de notas de alunos')
+print('Visão do professor')
+print('Acesso a conta com condicionais')
+print('3 chances de acessar o sistema')
+print('Após errar 3 x mensagem que diga que a conta bloqueada (senha incorreta)')
+print('Inserir notas (se Senha correta)')
+print('Fazer a média')
+print('- Utilize ***loops for, while, condicionais, variáveis, listas, tuplas ou dicionários…***')
+print('Ao finalizar o código, insira na borda do script, no última linha: input(’Digite enter para sair’)')
