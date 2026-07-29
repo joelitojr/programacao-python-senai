@@ -1,26 +1,37 @@
 # 1
 import random
 
-
-
-
 # escolha_pc = random.choice(opcao_pc)
 # print(escolha_pc)
-    
-for chance in range(1,4):
-    opcao_pc  =  ['✂️','🪨', '🧻']
+chance=3
+
+# for chance in range(1,4):
+
+for ind in range(1,chance):
+#    opcao_pc  =  ['✂️','🪨', '🧻']
+    print('')    
+    print('Chance: ',chance)
+    print('Tentativa número: ',ind)
+    opcao_pc  =  ['1']
     escolha_pc = random.choice(opcao_pc)
     # print(escolha_pc)
     minha_escolha = input('Escolha>>')
+    print('Vc escolheu', minha_escolha)
     if escolha_pc == minha_escolha:
-        print('Acertou vc escolheu', minha_escolha)
+#        print('Acertou vc escolheu', minha_escolha)
+        print('EMPATE')
         print('A maquina escolheu ',escolha_pc)
-        break
+        ind = ind - 1
+        chance = chance + 1
+#        break
     else:
         print('Errou feio, vc escolheu...', minha_escolha)
         print('A maquina escolheu ',escolha_pc)
 else:
     print('Chances esgotadas')            
+
+
+            
 
 
 
