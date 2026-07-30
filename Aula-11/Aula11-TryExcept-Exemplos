@@ -1,0 +1,20 @@
+try:
+    n  =  float(input('>>>'))
+    c =  n + 10
+    x  =  [1,2,3]
+    print(x[5])
+
+
+except ValueError as erro:
+    print(erro)    
+except TypeError as erro:
+    print(erro)
+except IndexError as erro:
+    print(erro)    
+else:
+    print('erro não identificado')
+finally:
+    print('Fim de carregamento ....')
+
+
+
