@@ -49,6 +49,52 @@ else:
     print('obrigada volte sempre')   
 
 
+# Exemplo - Professora - Sistema de alunos
+
+
+
+notas  = []
+while True:
+
+
+    chances = 3
+
+
+    for chance  in range(chances):
+
+
+        
+        p  =  input('Deseja registrar notas? ')
+        while p == 'sim':
+            login = input('Usuario: ')
+            senha =  input('Senha: ') 
+            if login == 'bea' and senha == '123':
+                print('Seja bem vindo sistema de notas')
+                nota1 = float(input('Nota: '))
+                nota2 = float(input('Nota: '))
+                nota3 = float(input('Nota: '))
+                notas.extend([nota1, nota2, nota3])
+                media  =  sum(notas)/len(notas)
+                print('Média', media)
+                if media >= 7:
+                    print('Aprovado')
+                elif media >= 5 and media <= 6:
+                    print('Recuperação') 
+                else:
+                    print('Reprovado')        
+
+
+                p = input('Deseja continuar? ')
+            else:
+                print('senha incorreta... ')    
+    else:   
+        print('SENHA BLOQUEADA ... ')        
+   
+
+
+
+
+    input('Clique enter para sair....')
 
 
 
