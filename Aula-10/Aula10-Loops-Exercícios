@@ -1,4 +1,4 @@
-# 1
+# Atividade 1 - 1
 print('ATIVIDADE 1 - 1 - Faça um programa, utilizando ***while***, que mostre na tela os números de 0 a 1000.')
 numcont=int(input('Informe o número inicial: '))
 numfim=int(input('Informe o número final  : '))
@@ -9,7 +9,7 @@ else:
    print('Fim da contagem !!!')
 
 
-# 2 
+# Atividade 1 - 2 
 print('')
 print('ATIVIDADE 1 - 2 - Faça um sistema, utilizando while e listas, que permita o usuário escrever o nome de 10 pessoas e os mostre na tela.')
 lista_nomes=[]
@@ -23,7 +23,7 @@ else:
     print('Nomes incluídos: ',lista_nomes)
 
 
-# 3 
+# Atividade 2 - 1 - Sistema de Cadastro de Alunos
 # print('')
 # print('ATIVIDADE 2 - 1 - Crie um sistema de notas alunos, com as seguintes operações: Utilize While ou for')
 # print('Sistema de notas de alunos')
