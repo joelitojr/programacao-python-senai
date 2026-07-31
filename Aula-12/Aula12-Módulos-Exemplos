@@ -71,8 +71,6 @@ print(variancia)
 
 
 # 4
-
-
 def estatistica(lista_notas):
     moda  =  statistics.mode(lista_notas)
     media = statistics.mean(lista_notas)
