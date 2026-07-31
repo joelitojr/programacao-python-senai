@@ -1,10 +1,23 @@
 # 1 
 # ***CRIE UMA FUNÇÃO PARA COMPARAR 2 NÚMEROS (par ou impar). UTILIZE VARIÁVEIS LOCAIS.***
+def comparar(n1,n2):
+    if n1 % 2==0 and n2 % 2 == 1:
+        print('N1 é par')
+    elif  n1 % 2 == 1 and n2 % 2 == 0:
+        print('N2 É PAR ')   
+    elif n1  % 2 ==0 and n2 % 2 == 0:
+        print('Ambos são pares')
+    else:
+        print('Nenhum, é par ')       
+comparar(3,5)
 
 
 # 2
 # ***CRIE UMA FUNÇÃO PARA MULTIPLICAR 3 NUMEROS.***
-
+def mult(n3,n4,n5):
+    calcm=n3*n4*n5
+    print('Resultado de multiplicação: ',calcm)
+mult(6,7,10)
 
 # 3
 # ***CRIE UMA FUNÇÃO PARA DESCOBRIR O VALOR ELEVADO DE UM NÚMERO.***
@@ -18,9 +31,28 @@
 # ***DESENVOLVA UMA FUNÇÃO PARA DESCOBRIR A IDADE DE UMA PESSOA.***
 
 
+
+# DESENVOLVA UMA FUNÇÃO PARA DESCOBRIR A IDADE DE UMA PESSOA.
+def descobrir(ano, ano_nascimento,mes_atual, mes_nascimento):
+    idade  =  ano - ano_nascimento
+    if mes_atual > mes_nascimento:
+        print('A pessoa tem', idade)
+    else:
+        idade_1 = idade - 1
+        print(idade_1)    
+descobrir(2026,2000,7,10)
+
 # 6
 # ***DESENVOLVA UMA FUNÇÃO PARA VER SE O BRASIL GANHOU A COPA DE 1999.***
+def copa(ano):
+    lista =  [1958, 1962, 1970, 1994 , 2002]
+    if ano in lista:
+        print('No ano citado o Brasil ganhou a copa')
+    else:
+        print('No ano citado o Brasil não Ganhou ')    
 
+
+copa(1994)
 
 # 7
 # ***DESENVOLVA UM SISTEMA DE RESTAURANTE, ONDE O CLIENTE TEM OPÇÃO DE ESCOLHER ENTRE SALADA, MACARRONADA, SANDUICHE, SORVETE.***  
@@ -66,4 +98,4 @@ def restaurante():
         print('obrigada volte sempre')    
 
 
-restaurante()  
+restaurante()       
