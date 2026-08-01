@@ -75,13 +75,7 @@ def restaurante():
         'lista_prod' :['','1 - SALADA', '2 -  MACARRONADA', '3 - SANDUICHE', '4  - SORVETE'],
         'valores' : [0,25.55,30.60,80.0,35.70]
         }
-
-
-          
         print(produ)
-        
-
-
         try:
             produto = int(input('Digite o id do produto: '))
             if produto:
