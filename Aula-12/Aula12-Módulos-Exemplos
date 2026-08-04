@@ -77,6 +77,106 @@ def estatistica(lista_notas):
     return moda, media, desvio , mediana, variancia, menor, maior
 
 
+#5
+import statistics
+
+
+def registrar_notas(nome, lista_notas):
+     
+    p = input(f'Deseja resgistrar as notas? do aluno {nome}')
+    while p  ==  'sim':
+        nota1 = float(input('nota: '))
+        nota2 = float(input('nota: '))
+        nota3 = float(input('nota: '))
+        lista_notas.extend([nota1, nota2, nota3])
+        p = input(f'Deseja  continuar?')
+    else:
+        return lista_notas
+     
+
+
+def mostrar_estatistica(lista_notas):
+    media =  statistics.mean(lista_notas)
+    moda =  statistics.mode(lista_notas)
+    desvio =  statistics.stdev(lista_notas)
+    
+    c  =  set(lista_notas)
+    if len(lista_notas) ==  len(c):
+       return f'Media - {media} | Não tem moda | Desvio Padrão - {desvio}'
+    else:
+        return f'Media - {media} | Tem moda {moda} | Desvio Padrão - {desvio}'
+
+
+#6
+# DESAFIO 1 - > SISTEMA COM MÓDULOS 
+
+
+import modulo 
+
+
+
+print('Sistema de notas: ')
+
+
+lista_notas = []
+notas =  modulo.registrar_notas('Julio', lista_notas)
+print(notas)
+
+estatistica = modulo.mostrar_estatistica(notas)
+print(estatistica)
+
+
+
+#7
+import statistics
+     
+
+def mostrar_estatistica(nome_empresa, lista_notas):
+    media =  statistics.mean(lista_notas)
+    moda =  statistics.mode(lista_notas)
+    desvio =  statistics.stdev(lista_notas)
+    mediana =  statistics.median(lista_notas)
+
+    print(f'Nome da empresa', nome_empresa)
+    print('Media -', media)
+    print('Moda - ', moda)
+    print('Mediana - ', mediana)
+    print('Desvio - ', desvio)
+
+
+#8
+# DESAFIO 1 - > SISTEMA COM MÓDULOS 
+
+
+import modulo2 
+
+
+empresa1 = [1000.,6000.,1200.,8000.,1400.]
+empresa2 = [5000.,4000.,3000.,2000.,7000.]
+empresa3 = [1200.,1300.,8000.,3000.,15000.]
+empresa4 = [1400.,1750.,2000.,4500.,5900.]
+
+modulo2.mostrar_estatistica('Empresa 1', empresa1)
+print('####' * 7)
+modulo2.mostrar_estatistica('Empresa 2', empresa2)   
+print('####' * 7)
+modulo2.mostrar_estatistica('Empresa 3', empresa3)
+print('####' * 7)
+modulo2.mostrar_estatistica('Empresa 4', empresa4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
