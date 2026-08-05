@@ -1,0 +1,71 @@
+import random
+
+
+def atividade_1():
+    print('')
+    return random.randint(5,10)
+
+def atividade_2():
+    print('')
+    n1 =  random.randint(5,10)
+    n2 =  random.randint(5,10)
+    n3 =  random.randint(5,10)
+    return n1, n2, n3  
+
+def atividade_3():
+    print('')
+    return random.randint(10,30)
+
+def atividade_4():
+    print('')
+    for ind in range(10,0,-1):
+        print(ind)
+    print('Fogo!')
+
+def atividade_5():
+    print('')
+    cont = 1
+    while cont <= 5:
+        cont += 1
+        numero = int(input('Informe um número (inteiro, positivo e maior que DOIS): '))
+        if numero <= 2:
+            if cont >= 5:
+                print('Atingiu o limite de 5 tentativas !!!')
+            else:
+                print('ATENÇÃO: Informe um número maior que DOIS !!!')
+        else:
+            print('Número válido !!!')
+            cont = 99
+            soma = 0
+            for ind2 in range(2,numero+1,2):
+               print('Loop-número par (range): ',ind2)
+               soma += ind2
+               print('Loop-soma: ',soma)
+    print('Soma dos números pares: ',soma)
+
+def atividade_6():
+    print('')
+    contab = 1
+    while contab <= 3:
+        contab += 1
+        numtab = int(input('Informe um número (inteiro e positivo): '))
+        if numtab < 0:
+            if contab >= 3:
+                print('Atingiu o limite de 3 tentativas !!!')
+            else:
+                print('ATENÇÃO: Informe um número positivo !!!')
+        else:
+            print('Número válido !!!')
+            contab = 99
+            multitab = 0
+            for indtab in range(1,11):
+                print('Loop-Tabuada (range): ',indtab)
+                multitab = indtab * numtab
+                print('Loop-Tabuada: ',multitab)
+    print('Fim da tabuada ( de 1 a 10 ) do número: ',numtab)
+ 
+def atividade_7():
+    print('')
+    for indregress in range(99,0,-2):
+        print(indregress)
+    print('Fim da Contagem Regressiva ( ímpar ) !!!')
