@@ -28,7 +28,58 @@ print(modulo_rev_aula13_exerc.atividade_3())
 
 
 # Exercício 4
+import random
 
+
+def atividade_1():
+    return random.randint(5,10)
+
+def atividade_2():
+    n1 =  random.randint(5,10)
+    n2 =  random.randint(5,10)
+    n3 =  random.randint(5,10)
+    return n1, n2, n3  
+
+def atividade_3():
+    return random.randint(10,30)
+
+def atividade_4():
+    for ind in range(10,0,-1):
+        print(ind)
+    print('Fogo!')
+
+def atividade_5():
+    cont = 1
+    while cont <= 5:
+        cont += 1
+        numero = int(input('Informe um número (inteiro, positivo e maior que DOIS): '))
+        if numero <= 2:
+            if cont >= 5:
+                print('Atingiu o limite de 5 tentativas !!!')
+            else:
+                print('ATENÇÂO: Informe um número maior que DOIS !!!')
+        else:
+            print('Número válido !!!')
+            break
+    soma = 0
+    for ind2 in range(2,numero+1,2):
+        print('Loop-número par (range): ',ind2)
+        soma += ind2
+        print('Loop-soma: ',soma)
+    print('Soma dos números pares: ',soma)
+
+import modulo_rev_aula13_exerc
+
+
+print(modulo_rev_aula13_exerc.atividade_1())
+
+print(modulo_rev_aula13_exerc.atividade_2())
+
+print(modulo_rev_aula13_exerc.atividade_3())
+
+modulo_rev_aula13_exerc.atividade_4()
+
+modulo_rev_aula13_exerc.atividade_5()
 
 
 
