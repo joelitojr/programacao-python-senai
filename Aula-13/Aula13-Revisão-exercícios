@@ -82,4 +82,35 @@ modulo_rev_aula13_exerc.atividade_4()
 modulo_rev_aula13_exerc.atividade_5()
 
 
+Exemplo da professora:
+
+
+# def atividade_5():
+#     n  =  int(input('Numero: '))
+#     l = []
+#     for x  in range(2,n,2):
+#         l.append(x)
+#     s  =  sum(l)
+#     print(l)
+#     return s    
+
+
+def atividade_5():
+    n  =  int(input('Numero: '))
+    l = 0
+    for x  in range(2,n,2):
+        l  =  l + x
+    
+    return l    
+
+
+#5 
+
+
+
+
+#6 
+
+
+
 
