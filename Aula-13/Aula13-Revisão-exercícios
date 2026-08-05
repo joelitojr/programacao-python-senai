@@ -1,4 +1,4 @@
-# Exercícios 1 , 2 , 3 , 4 e 5
+# Exercícios 1 , 2 , 3 , 4 , 5 , 6* e 7
 import random
 
 
@@ -39,6 +39,17 @@ def atividade_5():
         print('Loop-soma: ',soma)
     print('Soma dos números pares: ',soma)
 
+# def atividade_6():
+
+
+
+def atividade_7():
+    for indregress in range(99,0,-2):
+        print(indregress)
+    print('Fim da Contagem Regressiva ( ímpar ) !!!')
+
+
+
 # Principal
 import modulo_rev_aula13_exerc
 
@@ -52,6 +63,10 @@ print(modulo_rev_aula13_exerc.atividade_3())
 modulo_rev_aula13_exerc.atividade_4()
 
 modulo_rev_aula13_exerc.atividade_5()
+
+# modulo_rev_aula13_exerc.atividade_6()
+
+modulo_rev_aula13_exerc.atividade_7()
 
 
 Exemplo da professora:
