@@ -1,1 +1,87 @@
-#
+import os
+
+# 2
+print('Exemplo 2: Cria um Diretório')
+# Exemplo professora / manual
+# with open('novo_diretorio', 'w') as novo_arquivo:
+#     os.mkdir('novo_arquivo')
+
+# Teste
+os.mkdir('novo_dir_ex')
+
+
+# 1
+print('Exercício 1: Criar e ler um Arquivo')
+# Exemplo professora / manual
+# with open('novo_diretorio', 'w') as novo_arquivo:
+#     os.mkdir('novo_arquivo')
+
+# with open('exemplo.txt', 'r') as arquivo:
+#     conteúdo = arquivo.read()
+#     print(conteúdo)
+
+# Teste
+with open('C:/Users/Aluno/Downloads/Nova pasta/novo_dir_ex/novo_arq_ex.txt', 'w') as novo_arq:
+    novo_arq.write("Olá, teste do novo arquivo texto !\n")
+
+with open('C:/Users/Aluno/Downloads/Nova pasta/novo_dir_ex/novo_arq_ex.txt', 'r') as novo_arq:
+    conteúdo = novo_arq.read()
+    print(conteúdo)
+
+
+# 3
+print('Exercício 3: Renomear um Diretório')
+# Exemplo professora / manual
+# os.rename('exemplo.txt', 'test5.txt')
+
+# Teste
+os.rename("novo_dir_ex", "novo_dir_ex_ren")
+
+
+# 4
+print('Exercício 4:  Listar Arquivos em um Diretório ')
+# Exemplo professora / manual
+# with os.scandir('meu_diretorio') as entrada:
+#     for arquivo in entrada:
+#         if arquivo.is_file():
+#             print(f'Arquivo encontrado: {arquivo.name}')
+
+# Teste
+#  with os.scandir('novo_dir_ex_ren') as entrada:
+with os.scandir('C:/Users/Aluno/Downloads/Nova pasta') as entrada:
+    for arquivo in entrada:
+        if arquivo.is_file():
+            print(f'Arquivo encontrado: {arquivo.name}')
+
+# OU
+arquivos = os.listdir(".")
+print("Itens na pasta atual:", arquivos)
+
+
+# 5
+print('Exercício 5:  Copiar Arquivos em um Diretório')
+# Exemplo professora / manual
+import shutil
+# shutil.copytree('original', 'nome da copia')
+
+# Teste
+with os.scandir('C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren') as entrada:
+    shutil.copy("novo_arq_ex.txt", "copia_novo_arq_ex.txt")
+
+# OU
+shutil.copy("C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren\novo_arq_ex.txt", "C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren\copia_novo_arq_ex.txt")
+
+
+# 6
+print('Exercício 6:  Remover')
+# Exemplo professora / manual
+
+
+# Teste
+# Remove arquivo 
+os.remove("C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren\novo_arq_ex.txt", "C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren\copia_novo_arq_ex.txt")
+
+# Remove diretório
+os.rmdir("C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren\novo_arq_ex.txt", "C:\Users\Aluno\Downloads\Nova pasta\novo_dir_ex_ren")
+
+
