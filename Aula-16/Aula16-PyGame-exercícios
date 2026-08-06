@@ -112,5 +112,27 @@ fonte     = pygame.font.SysFont('Arial', 30)
 game_over = False 
 clock     = pygame.time.Clock()
 
+while True:
+    # Captura de eventos do Jogo ....
+    for evento in pygame.event.get():
+        if evento.type    == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if evento.type    == pygame.KEYDOWN:
+            if evento.key == pygame.K_SPACE and not pulando:
+                vel_y     = -10
+                pulando   = True 
+            if evento.key == pygame.K_w     and     game_over:
+                trex_y    = 300
+                cacto_x   = 800
+                score     = 0
+                game_over = False
+# ------------------------------------------------------------
+    if not game_over:
+        vel_y   += gravidade
+        trex_x  += vel_y 
+
+
+
 
 
