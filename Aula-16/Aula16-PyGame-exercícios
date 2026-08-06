@@ -78,11 +78,39 @@ while run:
 
 # # 1    
 import pygame
+import sys
+import random
 pygame.init()
 
-LARGURA
-ALTURA
-    
+LARGURA   = 800
+ALTURA    = 400
+tela      = pygame.display.set_mode(LARGURA, ALTURA)
+
+pygame.display.set_caption('JOGO TREX')
+
+# CARREGAR AS IMAGENS
+
+trex1     = pygame.image.load('trex1.png')
+trex2     = pygame.image.load('trex4.png')
+cacto1    = pygame.image.load('obstacle1.png')
+cacto2    = pygame.image.load('obstacle2.png')
+chao      = pygame.image.load('ground2.png')
+
+trex_x    = 100
+trex_y    = 300
+
+vel_y     = 0
+gravidade = 1
+pulando   = False 
+chao_x    = 0
+cacto_x   = 800
+cacto_y   = 30
+score     = 0
+
+fonte     = pygame.font.SysFont('Arial', 30)
+
+game_over = False 
+clock     = pygame.time.Clock()
 
 
 
