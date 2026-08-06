@@ -1,1 +1,175 @@
-#
+#Testes de software
+
+Testes Unitários
+Testes de Integração
+
+TESTE DE SOFTWARE
+
+Processo no qual se avalia a qualidade de um software através da execução de diferentes tipos de testes, visando identificar defeitos, bugs ou falhas no funcionamento do programa. Isso é essencial para garantir que o software atenda aos requisitos especificados e funcione corretamente para os usuários finais.
+
+Passos básicos:
+
+1. **Planejamento:** Entenda os requisitos do software e planeje quais tipos de testes serão necessários, levando em consideração a funcionalidade, desempenho, segurança, usabilidade, entre outros aspectos.
+2. **Criação de Casos de Teste:** Com base nos requisitos e no planejamento, crie casos de teste detalhados que cobrem diferentes cenários de uso do software.
+3. **Configuração do Ambiente de Teste:** Prepare o ambiente de teste, que pode incluir hardware, software, banco de dados, redes, entre outros componentes, conforme necessário para executar os testes.
+4. **Execução de Testes:** Execute os casos de teste conforme planejado, registrando os resultados e identificando quaisquer problemas encontrados.
+5. **Relatórios e Correções:** Documente os resultados dos testes e quaisquer defeitos encontrados. Comunique essas informações à equipe de desenvolvimento para que possam ser corrigidos.
+6. **Reteste:** Após as correções, repita os testes para garantir que os problemas foram resolvidos e que novos problemas não foram introduzidos.
+
+As principais plataformas para realizar testes de software com foco em Python incluem:
+
+1. **unittest:** O módulo unittest é uma estrutura de teste padrão em Python, inspirada no framework de teste JUnit do Java. Ele permite a criação e execução de testes de unidade de forma fácil e eficiente.
+2. **pytest:** O pytest é uma estrutura de teste mais flexível e poderosa em comparação com unittest. Ele oferece recursos avançados para escrever e executar testes de forma mais simples e expressiva.
+3. **nose2:** O nose2 é outro framework de teste popular em Python, que é uma evolução do nose. Ele fornece uma interface mais amigável e recursos adicionais para testes de unidade, integração e cobertura de código.
+4. **Robot Framework:** Embora não seja exclusivamente para Python, o Robot Framework é uma ferramenta de automação de teste de código aberto que suporta testes de aceitação, teste de sistema e testes de unidade. Ele permite escrever testes em uma linguagem de fácil compreensão e tem uma integração robusta com Python.
+
+UTILIZANDO O PYTEST:
+
+***Documentação - pytest***
+
+https://docs.pytest.org/en/stable/getting-started.html
+
+1  - Instalar a lib:
+
+pip install pytest
+
+2 - Crie um arquivo chamado **`minhas_funcoes.py`** com a seguinte função:
+
+def somar(a, b):
+    return a + b
+
+3 - crie outro arquivo chamado teste minhas funções
+
+# arquivo test_minhas_funcoes.py
+
+from minhas_funcoes import somar
+
+#estou  fornecendo as possiveis resposta 
+
+def test_somar():
+       assert somar(2, 3) == 5
+       assert somar(5, 7) == 12
+       assert somar(10, -3) == 7
+
+3  Acesse o terminal e digite pytest - clique em enter
+
+pytest
+
+A resolução será a seguinte: 
+
+```jsx
+PYGAME\testes\test_calculadora.py .                                          [100%]                                                                                     ================================ 1 passed in 0.05s ================================
+```
+
+obs: caso as máquinas não instalem o pytest, usar o tensil teste do replit
+
+O **`assert`** em Python é uma declaração usada para verificar se uma determinada condição é verdadeira e, se não for, levanta uma exceção **`AssertionError`**. Isso é frequentemente usado em testes unitários para verificar se o comportamento de uma função ou método é como esperado.
+
+No contexto de testes unitários, o **`assert`** é usado para verificar se a saída de uma função corresponde ao valor esperado. Se a condição passada para **`assert`** for falsa, o teste falha e uma exceção **`AssertionError`** é levantada, indicando que algo está errado
+
+***UNITÁRIOS:***
+
+Teste unitário é uma prática de teste de software na qual unidades individuais de código são testadas isoladamente para garantir que funcionem conforme o esperado. Uma "unidade" pode ser uma função, método, classe ou até mesmo um módulo inteiro, dependendo do contexto do teste.
+
+***TESTE DE INTEGRAÇÃO:*** 
+
+Testes de integração são usados para testar a interação entre diferentes partes de um sistema, geralmente unidades maiores de código, como classes ou módulos, em vez de pequenas unidades individuais. 
+
+---
+
+# Teste de validação
+
+6.2. Validação
+6.2.1.Revisões com Stakeholders
+6.2.2.Testes de Aceitação do Usuário (UAT)
+
+Dentro da área de programação, validação, revisões com stakeholders e testes de aceitação do usuário (UAT) desempenham papéis essenciais no ciclo de desenvolvimento de software. Aqui está uma breve explicação de cada um:
+
+1. **Validação:**
+    - A validação refere-se ao processo de garantir que o software atenda aos requisitos especificados e às necessidades dos usuários finais. Isso geralmente envolve a verificação de que o software funciona conforme o esperado, realiza as funções necessárias e atende aos critérios de qualidade estabelecidos. A validação pode ser feita por meio de testes funcionais, testes de desempenho, testes de segurança, entre outros métodos.
+2. **Revisões com Stakeholders:**
+    - As revisões com stakeholders são encontros ou reuniões onde as partes interessadas no projeto, como clientes, usuários finais, gerentes de produto e outros membros relevantes da equipe, revisam o progresso do trabalho. Durante essas revisões, o objetivo é obter feedback valioso sobre o produto em desenvolvimento, discutir quaisquer preocupações ou requisitos adicionais e garantir que o trabalho esteja alinhado com as expectativas do cliente e as metas do projeto.
+3. **Testes de Aceitação do Usuário (UAT):**
+    - Os testes de aceitação do usuário é uma etapa final no processo de desenvolvimento de software, em que os usuários finais ou representantes dos usuários executam testes no software para determinar se ele atende aos requisitos de negócios e se é adequado para uso em produção. Esses testes são frequentemente conduzidos em um ambiente que simula o ambiente de produção para garantir que o software funcione corretamente em condições reais de uso.
+
+Em resumo, a validação garante a qualidade e conformidade do software, as revisões com stakeholders permitem a comunicação e alinhamento contínuos com as partes interessadas, e os testes de aceitação do usuário garantem que o software atenda às expectativas e necessidades dos usuários finais antes de ser lançado. Esses processos são cruciais para o sucesso de um projeto de desenvolvimento de software.
+
+Um pouco mais sobre Stakholders:
+
+"Stakeholders" são todas as partes interessadas em um projeto, organização ou empresa, que podem ser afetadas direta ou indiretamente por suas atividades ou decisões. Isso inclui uma ampla gama de indivíduos ou grupos, como clientes, usuários finais, acionistas, gerentes, equipes de desenvolvimento, fornecedores, parceiros comerciais, reguladores e até mesmo a comunidade local.
+
+ESTUDO DE CASO:
+
+Vamos considerar um estudo de caso envolvendo stakeholders na área de tecnologia:
+
+Empresa X: Desenvolvimento de um Aplicativo de Gerenciamento de Projetos
+
+Stakeholders:
+
+1. Clientes da Empresa X: Representantes de empresas que contrataram a Empresa X para desenvolver o aplicativo de gerenciamento de projetos. Eles são os principais beneficiários do produto final e têm expectativas claras sobre as funcionalidades e a usabilidade do aplicativo.
+2. Usuários Finais: Funcionários das empresas clientes que serão os usuários diários do aplicativo. Eles desempenham um papel crucial na aceitação e adoção do produto. Se o aplicativo não atender às suas necessidades e expectativas, pode ser mal utilizado ou até mesmo abandonado.
+3. Equipe de Desenvolvimento: Engenheiros de software, designers de interface do usuário (UI), designers de experiência do usuário (UX), gerentes de projeto e outros profissionais envolvidos no desenvolvimento do aplicativo. Eles estão encarregados de transformar os requisitos dos clientes em um produto funcional, garantindo alta qualidade e entregas dentro do prazo.
+4. Gerentes e Liderança da Empresa X: Gerentes de projeto, diretores de desenvolvimento, diretores de tecnologia (CTO) e outros líderes da Empresa X. Eles têm interesse no sucesso do projeto, garantindo que ele seja concluído dentro do orçamento, dentro do prazo e atenda aos padrões de qualidade estabelecidos.
+5. Fornecedores e Parceiros: Fornecedores de tecnologia, provedores de serviços em nuvem, consultores especializados, entre outros parceiros que podem estar envolvidos no projeto de desenvolvimento, fornecendo ferramentas, recursos ou conhecimentos específicos.
+
+Cenário:
+
+A Empresa X foi contratada por várias empresas para desenvolver um aplicativo de gerenciamento de projetos que permitirá a colaboração eficaz entre equipes, o rastreamento de tarefas e o monitoramento do progresso do projeto em tempo real. O aplicativo deve ser altamente intuitivo, acessível em várias plataformas (web, dispositivos móveis) e integrável com outras ferramentas de produtividade comuns.
+
+Papéis dos Stakeholders:
+
+- Clientes: Eles fornecem os requisitos detalhados para o aplicativo, participam de sessões de revisão e feedback durante o desenvolvimento e a realização de testes de aceitação do usuário.
+- Usuários Finais: Participam de sessões de teste de usabilidade, fornecendo feedback sobre a experiência de uso do aplicativo e identificando áreas de melhoria.
+- Equipe de Desenvolvimento: Responsável pela implementação dos requisitos dos clientes, colabora com os stakeholders para garantir que as expectativas sejam atendidas e que o produto final seja de alta qualidade.
+- Gerentes e Liderança da Empresa X: Supervisionam o progresso do projeto, tomam decisões importantes, resolvem problemas e comunicam regularmente o status do projeto aos clientes e outros stakeholders.
+- Fornecedores e Parceiros: Podem fornecer suporte técnico, recursos adicionais ou conhecimentos especializados para superar desafios específicos durante o desenvolvimento do aplicativo.
+
+Em Resumo:
+
+O sucesso do projeto depende da colaboração eficaz e do envolvimento de todos os stakeholders. Com uma comunicação clara, feedback contínuo e uma compreensão compartilhada dos objetivos do projeto, a Empresa X pode entregar um aplicativo de gerenciamento de projetos que atenda às necessidades de seus clientes e usuários finais, enquanto mantém a satisfação de todas as partes interessadas envolvidas.
+
+## Teste de Aceitação do Usuário (UAT - User Acceptance Testing)
+
+O Teste de Aceitação do Usuário (UAT - User Acceptance Testing) é uma etapa crítica no ciclo de desenvolvimento de software, na qual os usuários finais do sistema testam o software para garantir que ele atenda aos seus requisitos e expectativas antes de ser lançado em produção. É uma validação final realizada pelo cliente ou usuário final para determinar se o produto está pronto para uso em ambiente real.
+
+Principais Conceitos:
+
+1. Validação Final:
+O UAT é a validação final do software antes de ser lançado em produção. Ele garante que o produto atenda aos requisitos do cliente e esteja em conformidade com suas expectativas.
+2. Realismo do Ambiente de Produção:
+O UAT é conduzido em um ambiente que simula o ambiente de produção o mais próximo possível. Isso ajuda a identificar problemas que podem surgir em condições reais de uso.
+3. Foco no Usuário Final:
+O UAT é centrado no usuário final. Os testes são realizados pelos próprios usuários finais ou por representantes deles, garantindo que o software atenda às necessidades e expectativas reais dos usuários.
+4. Feedback Direto:
+Durante o UAT, os usuários fornecem feedback direto sobre o software, identificando problemas, sugerindo melhorias e validando se as funcionalidades atendem aos casos de uso previstos.
+5. Critério de Aceitação:
+O UAT é conduzido com base em critérios de aceitação previamente definidos. Isso inclui funcionalidades específicas a serem testadas, cenários de teste e métricas de sucesso.
+6. Colaboração com a Equipe de Desenvolvimento:
+Durante o UAT, os usuários colaboram com a equipe de desenvolvimento para resolver problemas identificados e garantir que o software atenda às suas necessidades antes do lançamento.
+7. Registro e Resolução de Defeitos:
+Durante o UAT, os defeitos encontrados são registrados, priorizados e corrigidos pela equipe de desenvolvimento antes do lançamento. O objetivo é garantir que o software seja lançado sem problemas significativos.
+8. Aceitação Formal:
+Após a conclusão bem-sucedida do UAT e a correção de quaisquer defeitos identificados, os usuários finais formalmente aceitam o software, indicando que estão satisfeitos com o produto e que ele está pronto para ser implantado em produção.
+
+O Teste de Aceitação do Usuário é uma etapa crucial no processo de desenvolvimento de software, onde os usuários finais desempenham um papel fundamental na validação do produto antes do lançamento. Ele garante que o software atenda às necessidades do cliente e proporcione uma experiência de usuário satisfatória.
+
+---
+
+Básicamente 4  testes:
+
+Unidade para código único
+
+Testa um pedaço do código, uma função ou um método.
+
+Integração para módulo
+Após o teste unitário, o teste de integração avalia o funcionamento de todo o software, desses componentes individuais.
+Ele garante que cada componente de software funcione. Este nível de teste integra dois ou mais módulos testados unitariamente para testar interações técnicas.
+
+Sistema para funções gerais
+
+Esse nível de teste é fundamental para detectar problemas em todo o sistema, como problemas de
+compatibilidade, gargalos de desempenho e vulnerabilidades de segurança.
+
+Aceitação para feedback do usuário
+
+O teste de aceitação é a etapa final do teste de software, que garante que o software funcione corretamente no ambiente de trabalho do usuário
