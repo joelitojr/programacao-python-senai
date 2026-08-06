@@ -1,0 +1,391 @@
+Fundamentos de programação gráfica em 2D
+Pygame
+Interface do usuário (UI)
+
+python.exe -m pip install --upgrade pip
+
+---
+
+python -m pip install --upgrade pip
+
+python -m pip install pygame --user
+
+python -m pip install pygame==2.6.0
+
+---
+
+win + r 
+
+appwiz.cpl
+busque py -  escolha a versão 3.14 - clique com o botão direito e desinstalar 
+
+# BIBLIOTECAS
+
+Uma biblioteca pode ajudar no seu desenvolvimento, fazendo com que tudo fique mais rápido!
+
+Imagine que você é um desenvolvedor e precisa ganhar tempo na criação de uma aplicação web.
+
+utilizar uma blioteca python vai fornecer código e funções prontas para uma determinada área do desenvolvimento. 
+
+# SISTEMA DE GERENCIAMENTO DE PACOTES -  PIP
+
+O `pip` é um sistema de gerenciamento de pacotes para Python. Ele é uma ferramenta que facilita a instalação, atualização e gerenciamento de bibliotecas e pacotes Python de terceiros. O nome "pip" é uma sigla para "Pip Installs Packages" (ou "Pip Instala Pacotes", em português), o que reflete sua principal função: instalar pacotes Python.
+
+Algumas das principais funcionalidades do `pip` incluem:
+
+1. **Instalação de Pacotes:** O `pip` permite que você instale pacotes Python diretamente do Python Package Index (PyPI) e de outros repositórios de pacotes. Você pode instalar bibliotecas e ferramentas de terceiros com facilidade usando um simples comando `pip install`.
+2. **Atualização de Pacotes:** Com o `pip`, você pode atualizar pacotes Python para suas versões mais recentes com o comando `pip install --upgrade`.
+3. **Remoção de Pacotes:** O `pip` também permite a remoção de pacotes que você não precisa mais, com o comando `pip uninstall`.
+4. **Listagem de Pacotes Instalados:** Você pode listar todos os pacotes Python instalados em seu ambiente com o comando `pip list`.
+5. **Requisitos e Ambientes Virtuais:** O `pip` é comumente usado em conjunto com arquivos de requisitos (`requirements.txt`) para especificar as dependências de um projeto. Além disso, ele é usado em ambientes virtuais para isolar as dependências de diferentes projetos.
+
+Para verificar se o `pip` já está instalado em sua máquina, você pode abrir o terminal ou prompt de comando e executar o seguinte comando:
+
+```bash
+pip --version
+
+```
+
+Se o `pip` não estiver instalado, você precisará instalá-lo. Dependendo do sistema operacional que você está usando, a instalação pode variar, mas geralmente envolve a instalação do Python e o `pip` é incluído por padrão. Se você precisar instalá-lo separadamente, siga as instruções apropriadas para o seu sistema operacional.
+
+Lembrando que é uma boa prática manter o `pip` atualizado. Você pode atualizá-lo executando o seguinte comando:
+
+```bash
+python -m pip install --upgrade pip
+
+```
+
+Isso garantirá que você tenha a versão mais recente do `pip` em seu sistema.
+
+## **EXERCÍCIOS COM O PIP**
+
+Exercício 1: Instale o pacote 'numpy' -  data science - 
+
+Exercício 2: Instale o pacote 'matplotlib'  -  data science - 
+
+Exercício 3: Instale o pacote 'requests' - api   - 
+
+Exercício 4: Instale o pacote 'pandas'  -  data science - 
+
+Exercício 5: Instale o pacote 'flask' -  interface web
+
+Exercício 6: Instale o pacote 'beautifulsoup4' -  web
+
+Exercício 7: Instale o pacote 'scikit-learn'  -  data science
+
+Exercício 8: Instale o pacote 'openpyxl’  -  trabalhar com excel
+
+### **BIBLIOTECAS EM PYTHON:**
+
+Algumas bibliotecas populares e úteis em Python, agrupadas por categorias:
+
+**Manipulação de Dados:**
+
+1. NumPy - Para computação numérica eficiente.
+2. pandas - Para manipulação e análise de dados tabulares.
+3. Matplotlib - Para criação de gráficos e visualização de dados.
+4. Seaborn - Para visualização de dados estatísticos.
+5. scikit-learn - Para aprendizado de máquina e aprendizado profundo.
+
+**Desenvolvimento Web:**
+6. Flask - Para construir aplicativos web leves e rápidos.
+7. Django - Para desenvolvimento web completo e robusto.
+8. FastAPI - Para criação de APIs RESTful de maneira rápida e fácil.
+
+**Processamento de Texto e Linguagem Natural:**
+9. NLTK (Natural Language Toolkit) - Para processamento de linguagem natural.
+10. spaCy - Uma biblioteca NLP moderna e eficiente.
+11. TextBlob - Para tarefas de processamento de texto, como análise de sentimentos.
+
+**Inteligência Artificial e Aprendizado de Máquina:**
+12. TensorFlow - Uma biblioteca popular para aprendizado de máquina e aprendizado profundo.
+13. PyTorch - Uma estrutura de aprendizado profundo amplamente usada.
+14. Keras - Uma API de alto nível para construir redes neurais.
+15. OpenAI Gym - Para desenvolver e comparar algoritmos de aprendizado por reforço.
+
+**Manipulação de Imagem e Visão Computacional:**
+16. OpenCV - Uma biblioteca de visão computacional para processamento de imagem.
+17. Pillow - Para manipulação de imagens (similar ao PIL - Python Imaging Library).
+
+**Manipulação de Datas e Horas:**
+18. datetime - Biblioteca padrão para trabalhar com datas e horas.
+19. arrow - Uma biblioteca para manipulação de datas e horas mais amigável.
+
+**Bancos de Dados:**
+20. SQLAlchemy - Para acesso e manipulação de bancos de dados relacionais.
+21. pymongo - Para interagir com bancos de dados MongoDB.
+22. SQLite - Biblioteca embutida para bancos de dados SQLite.
+
+**Redes e Comunicação:**
+23. requests - Para fazer requisições HTTP.
+24. Twisted - Para programação de rede assíncrona.
+25. socket - Biblioteca padrão para programação de rede em baixo nível.
+
+**Interface Gráfica de Usuário (GUI):**
+26. tkinter - Biblioteca padrão para criação de interfaces gráficas.
+27. PyQt e PySide - Bibliotecas para criação de interfaces gráficas com Qt.
+28. Kivy - Para criar aplicativos multiplataforma com interfaces sensíveis ao toque.
+
+**Outros:**
+29. os - Biblioteca padrão para operações de sistema e arquivos.
+30. math - Biblioteca padrão para funções matemáticas.
+31. random - Biblioteca padrão para geração de números aleatórios.
+
+---
+
+# Pygame
+
+```jsx
+***Pygame é uma biblioteca em Python usada para criar jogos e aplicações multimídia 
+interativas. Ela fornece funcionalidades para lidar com gráficos, 
+som, entrada do usuário e outros aspectos 
+essenciais no desenvolvimento de jogos. Com o Pygame
+os desenvolvedores podem criar jogos 2D, de forma relativamente simples e eficiente.***
+```
+
+Instalando pygame
+
+pip install pygame
+
+Verificar se ele está instalado:
+
+pip list
+
+PRIMEIROS PASSOS: 
+
+```python
+import pygame
+
+pygame.init() # inicio 
+
+size = 1000, 500
+
+tela = pygame.display.set_mode(size)
+pygame.display.set_caption('Titulo')
+
+teste = True
+
+while teste:
+    pass
+```
+
+```python
+
+import pygame
+
+# tela 
+pygame.init()
+x  = 300
+y  = 300
+
+tela  =  pygame.display.set_mode((x, y))
+run =  True
+pygame.display.flip()
+
+clock = pygame.time.Clock()
+
+while run:
+    for evento in pygame.event.get():
+        if evento.type == pygame.QUIT:
+            run = False
+            print('Fim de carregamento')
+    tela.fill('green')        
+    pygame.draw.rect(tela, 'red', (50,150,20,20))
+    pygame.draw.rect(tela, (255,255,255), (100,150,20,20))
+    pygame.draw.rect(tela, 'yellow', (150,150,20,20))
+
+    # você tenta criar através da documentação  https://www.pygame.org/docs/ref/draw.html
+    # poligono
+    # circulo
+    # elipse 
+
+    pygame.display.flip()        
+        
+
+pygame.quit()        
+
+..............................................................................
+
+import pygame
+pygame.init()
+screen = pygame.display.set_mode([500, 500])
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill((0, 0, 0))
+    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+    pygame.display.flip()
+pygame.quit()
+
+---------------------------------------------
+
+import pygame
+import sys
+
+pygame.init()
+
+WIDTH = 500
+LENGTH = 400
+
+tela = pygame.display.set_mode((WIDTH, LENGTH))
+pygame.display.set_caption('Teste')
+
+#loop da página 
+
+while True:
+    for event in pygame.event.get():
+
+        if event.type == pygame.QUIT:
+           pygame.quit()
+           sys.exit() 
+        
+        cor =  (240,230,140)
+        tela.fill(cor)       
+        pygame.draw.circle(tela, ('red'), (250,200), 50)
+        pygame.draw.circle(tela, ('black'), (10,20), 20)
+
+        # APLICAR COM A DOCUMENTAÇÃO: 
+         
+        # LINHA 
+        # ELIPSE 
+        # CIRCULO
+        
+        # DOCUMENTAÇÃO 
+        # PESQUISA       
+
+        pygame.display.flip()
+        
+        
+
+        
+        
+        
+        ---------------------------------
+
+Movimentando um retângulo**
+        
+import pygame
+import sys
+
+pygame.init()
+
+width = 700
+height = 500
+
+screen = pygame.display.set_mode((width, height)) 
+
+quandrado =  pygame.Rect(350,200, 150,70)
+rectangulo2 = pygame.Rect(10,150, 50,50)
+
+clock =  pygame.time.Clock()
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+           pygame.quit() 
+           sys.exit()
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                quandrado.move_ip([10,0])
+            if event.key == pygame.K_LEFT:
+                quandrado.move_ip([-10,0])
+            if event.key == pygame.K_UP:
+                quandrado.move_ip([0,-10])
+            if event.key == pygame.K_DOWN:
+                quandrado.move_ip([0,10])     
+
+        
+        screen.fill('red')
+        pygame.draw.rect(screen,('green'), quandrado)
+        pygame.draw.rect(screen,('white'), rectangulo2)
+        pygame.display.update()
+        
+        
+--------------------------------------------
+
+inicio jogo pong
+
+import pygame 
+import sys
+
+pygame.init()
+
+W = 800
+H = 600
+
+screen = pygame.display.set_mode((W,H))
+pygame.display.set_caption('PING E PONG')
+
+#POSICIONAMENTO DA BOLA 
+BALL_X = 400 // 2
+BALL_Y = 300 //2
+
+#VELOCIDADE DA BOLA
+BV_X = 5
+BV_Y = 5
+
+#PONTUAÇÃO DOS JOGADORES 
+JOG1_PONTUCAO = 0
+JOG2_PONTUCAO = 0
+
+#TAMANHO DAS VARETAS 
+
+LARGURA_VARETA = 20
+ALTURA_VARETA  = 150
+
+WHITE  = 'white'
+GREEN = 'green'
+BLACK = 'black'
+
+def draw_shapes():
+    screen.fill('white')
+
+    pygame.draw.rect(screen, )
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+        pygame.display.flip()    
+
+-------------------------------------//-----
+
+1 - CRIAR UMA TELA
+
+2 - UTILIZAR EVENTOS E FORMAS
+
+3 - CRIAR UM JOGO:
+
+# MANIPULAÇÃO DE EVENTOS 
+# JOGO PONG
+
+```
+
+***Documentação (a home está com problemas, deva ser uma atualização)***
+
+documentação inicial
+
+https://www.pygame.org/docs/index.html 
+
+Exemplos
+
+https://www.pygame.org/docs/ref/examples.html#pygame.examples.aliens.main
+
+funções
+
+https://www.pygame.org/docs/tut/PygameIntro.html
+
+        CORES RGB| HEXADECIMAIS
+        https://www.rapidtables.com/web/color/RGB_Color.html 
+        https://coolors.co/
+        
+        PLANO CARTESIANO 
+        https://blog.professorferretto.com.br/nocoes-basicas-de-plano-cartesiano/
+        
+        BOTÕES TECLADO 
+        https://www.pygame.org/docs/ref/key.html
