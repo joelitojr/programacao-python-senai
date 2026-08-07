@@ -129,8 +129,32 @@ while True:
                 game_over = False
 # ------------------------------------------------------------
     if not game_over:
-        vel_y   += gravidade
-        trex_x  += vel_y 
+        vel_y       +=  gravidade
+        trex_x      +=  vel_y 
+
+        if trex_y   >=  300:
+            trex_y   =  300
+            pulando  =  False
+
+        chao_x      -=  5
+        if chao_x    < -800:
+            chao_x   =  0 
+
+        cacto_x     -=  5
+        if cacto_x   < -50:
+            cacto_x  =  random.randint(800,100)
+            score   +=  1
+
+        frame       +=  1
+        if frame     >  20:
+            frame    =  0
+        if frame     <  10:
+            trex     =  trex1
+        else:
+            trex     =  trex2
+
+
+
 
 
 
