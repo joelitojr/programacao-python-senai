@@ -20,7 +20,7 @@
 
 # # Exemplos da professora 
 
-# # 1 - JOGO DO TREX ( Modelo Google )
+# # 1
 # import pygame
 # pygame.init()
 
@@ -76,7 +76,7 @@ while run:
 
 # # Exercícios
 
-# # 1    
+# # 1 - JOGO DO TREX ( Modelo Google )    
 import pygame
 import sys
 import random
