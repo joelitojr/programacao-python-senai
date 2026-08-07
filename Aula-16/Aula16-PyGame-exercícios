@@ -6,16 +6,16 @@
 
 # # Exemplo da professora 
 
-# import pygame
-# pygame.init()
+import pygame
+pygame.init()
 
-# janela  =  pygame.display.set_mode([500,500])
-# run  =  True
+janela  =  pygame.display.set_mode([500,500])
+run  =  True
 
-# while run:
-#     for evento in pygame.event.get():
-#         if evento.type == pygame.QUIT:
-#             run  =  False
+while run:
+    for evento in pygame.event.get():
+        if evento.type == pygame.QUIT:
+            run  =  False
 
 
 # # 06/08/2026
@@ -23,24 +23,24 @@
 # # Exemplos da professora 
 
 # # 1
-# import pygame
-# pygame.init()
+import pygame
+pygame.init()
 
-# tela  =  pygame.display.set_mode([500,500])
-# pygame.display.set_caption("TESTANDO PYGAME")
+tela  =  pygame.display.set_mode([500,500])
+pygame.display.set_caption("TESTANDO PYGAME")
 
-# clock =  pygame.time.Clock()
+clock =  pygame.time.Clock()
 
-# run =  True
+run =  True
 
-# while run:
-#     for evento  in pygame.event.get():
-#         if evento.type  == pygame.QUIT: 
-#             run = False
-#     tela.fill('blue')
-#     pygame.draw.rect(tela, 'white',(100,100,50,50))
-#     pygame.draw.circle(tela, 'yellow',(250,250), 100)
-#     pygame.display.update()   
+while run:
+    for evento  in pygame.event.get():
+        if evento.type  == pygame.QUIT: 
+            run = False
+    tela.fill('blue')
+    pygame.draw.rect(tela, 'white',(100,100,50,50))
+    pygame.draw.circle(tela, 'yellow',(250,250), 100)
+    pygame.display.update()   
 
 
 # # 2
@@ -194,12 +194,6 @@ while True:
 # # 07/08/2026
 
 # # 1 - 
-
-
-
-
-
-
 
 
 
