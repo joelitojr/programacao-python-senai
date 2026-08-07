@@ -76,7 +76,7 @@ while run:
 
 # # Exercícios
 
-# # 1 - JOGO DO TREX ( Modelo Google )    
+# # 1 - JOGO DO TREX ( Modelo Google ) SEM SOM   
 import pygame
 import sys
 import random
@@ -107,8 +107,9 @@ chao_x    = 0
 cacto_x   = 800
 cacto_y   = 300
 score     = 0
+frame     = 0
 
-fonte     = ppygame.font.SysFont("Arial", 30, bold=True)
+fonte     = pygame.font.SysFont("Arial", 30, bold=True)
 
 game_over = False 
 clock     = pygame.time.Clock()
@@ -116,7 +117,7 @@ clock     = pygame.time.Clock()
 while True:
     # Captura de eventos do Jogo ....
     for evento in pygame.event.get():
-        if evento.type    == pygame.QUIT:
+        if evento.type    ==  pygame.QUIT:
             pygame.quit()
             sys.exit()
         if evento.type    ==  pygame.KEYDOWN:
@@ -180,4 +181,9 @@ while True:
 
     pygame.display.update()
     clock.tick(30)
+
+
+# # 1.1 - JOGO DO TREX ( Modelo Google ) COM SOM   
+
+
 
