@@ -1,3 +1,31 @@
 # # 
+# atividade a partir desse código
+import tkinter as tk
 
+janela  =  tk.Tk()
+janela.geometry('500x500')
+janela.title('FORMULÁRIO')
+
+# TITULO DO FORM
+
+titulo  =  tk.Label(janela, text='FORMULARIO DE CADASTRO')
+titulo.pack()
+
+# TÍTULO  DO NOME |  INPUT DO NOME
+
+nome_texto = tk.Label(janela, text  =  'Nome')
+nome_texto.pack()
+
+nome_input =  tk.Entry(janela)
+nome_input.pack()
+
+# -------------------
+
+janela.mainloop()
+
+
+# subir para o github 
+
+
+        
 
