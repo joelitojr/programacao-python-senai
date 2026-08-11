@@ -1,0 +1,45 @@
+#
+
+import tkinter as tk
+
+
+
+def display():
+    texto = entrada.get()
+    texto_.config(text = texto)
+
+
+
+
+
+janela = tk.Tk()
+janela.geometry('600x300')
+
+
+# tk.Label(janela, text  =  'isso é um texto',font=('System', 30), fg= 'blue' ).pack()
+
+
+entrada  =  tk.Entry(janela)
+entrada.pack(pady= 10)
+
+
+
+btn  =  tk.Button(janela, text = 'clique aqui', command=display)
+btn.pack()
+
+
+texto_  =  tk.Label(janela, text  =  'Isso vai mudar',font=('System', 30), fg= 'blue' )
+texto_.pack()
+
+
+
+
+
+
+
+
+janela.mainloop()
+
+
+
+
