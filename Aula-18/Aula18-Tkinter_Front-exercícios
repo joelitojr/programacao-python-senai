@@ -28,32 +28,54 @@
 
 import tkinter as tk
 
+def display():
+    texto1 = entrada_1.get()
+    texto_1.config(text = texto1)
+    texto2 = entrada_2.get()
+    texto_2.config(text = texto1)
+    texto3 = entrada_3.get()
+    texto_3.config(text = texto3)
+    texto4 = entrada_4.get()
+    texto_4.config(text = texto4)
+    texto5 = entrada_5.get()
+    texto_5.config(text = texto5)
+    texto6 = entrada_6.get()
+    texto_6.config(text = texto6)
+    texto7 = entrada_7.get()
+    texto_7.config(text = texto7)
+    texto8 = entrada_8.get()
+    texto_8.config(text = texto8)
+
 janela  =  tk.Tk()
 janela.geometry('1700x750')
 janela.title('FORMULÁRIO')
 
 # TITULO DO FORM
-
 titulo  =  tk.Label(janela, text='FORMULARIO DE CADASTRO')
 titulo.pack()
 
-# TÍTULO  DO NOME |  INPUT DO NOME
-
+# TÍTULO DO NOME |  INPUT DO NOME
 nome_texto = tk.Label(janela, text  =  'Nome')
 nome_texto.pack()
 
 nome_input =  tk.Entry(janela)
 nome_input.pack()
 
-
-# TÍTULO  DE IDADE |  INPUT DE IDADE
+# TÍTULO DE IDADE |  INPUT DE IDADE
 idade_texto = tk.Label(janela, text  =  'Idade')
 idade_texto.pack()
 
 idade_input =  tk.Entry(janela)
 idade_input.pack()
 
-# TÍTULO  DE ENDEREÇO |  INPUT DE ENDEREÇO
+# TÍTULO DE E_MAIL |  INPUT DE E_MAIL
+email_texto = tk.Label(janela, text  =  'E_mail')
+email_texto.pack()
+
+email_input =  tk.Entry(janela)
+email_input.pack()
+
+# TÍTULO DE ENDEREÇO |  INPUT DE ENDEREÇO
 endereco_texto = tk.Label(janela, text  =  'Endereço')
 endereco_texto.pack()
 
@@ -81,13 +103,6 @@ cidade_texto.pack()
 cidade_texto =  tk.Entry(janela)
 cidade_texto.pack()
 
-# TÍTULO  DE CEP |  INPUT DE CEP
-cep_texto = tk.Label(janela, text  =  'Cep')
-cep_texto.pack()
-
-cep_input =  tk.Entry(janela)
-cep_input.pack()
-
 # TÍTULO  DE CURSOS |  INPUT DE CURSOS
 cursos_texto = tk.Label(janela, text  =  'Cursos')
 cursos_texto.pack()
@@ -97,7 +112,35 @@ cursos_input.pack()
 
 # -------------------
 
+entrada_1  =  nome_input
+entrada_1.pack()
 
+entrada_2  =  idade_input
+entrada_2.pack()
+
+entrada_3  =  email_input
+entrada_3.pack()
+
+entrada_4  =  endereco_input
+entrada_4.pack()
+
+entrada_5  =  celular_input
+entrada_5.pack()
+
+entrada_6  =  cep_input
+entrada_6.pack()
+
+entrada_7  =  cidade_input
+entrada_7.pack()
+
+entrada_8  =  cursos_input
+entrada_8.pack()
+
+btn  =  tk.Button(janela, text = 'Enviar', command=display)
+btn.pack()
+
+texto_1  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_1.pack()
 
 # -------------------
 
