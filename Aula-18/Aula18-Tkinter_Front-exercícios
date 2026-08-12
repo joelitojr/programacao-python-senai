@@ -25,14 +25,13 @@
 
 # Tamanho  da tela  = '1700x750’
 
-
 import tkinter as tk
 
 def display():
     texto1 = entrada_1.get()
     texto_1.config(text = texto1)
     texto2 = entrada_2.get()
-    texto_2.config(text = texto1)
+    texto_2.config(text = texto2)
     texto3 = entrada_3.get()
     texto_3.config(text = texto3)
     texto4 = entrada_4.get()
@@ -100,8 +99,8 @@ cep_input.pack()
 cidade_texto = tk.Label(janela, text  =  'Cidade')
 cidade_texto.pack()
 
-cidade_texto =  tk.Entry(janela)
-cidade_texto.pack()
+cidade_input =  tk.Entry(janela)
+cidade_input.pack()
 
 # TÍTULO  DE CURSOS |  INPUT DE CURSOS
 cursos_texto = tk.Label(janela, text  =  'Cursos')
@@ -142,6 +141,30 @@ btn.pack()
 texto_1  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
 texto_1.pack()
 
+texto_2  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_2.pack()
+
+texto_3  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_3.pack()
+
+texto_4  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_4.pack()
+
+texto_5  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_5.pack()
+
+texto_6  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_6.pack()
+
+texto_7  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_7.pack()
+
+texto_8  =  tk.Label(janela, text  =  '',font=('System', 15), fg= 'blue' )
+texto_8.pack()
+
 # -------------------
 
 janela.mainloop()
+
+
+
