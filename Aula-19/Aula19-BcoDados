@@ -7,7 +7,7 @@ cs = c.cursor()
 
 cs.execute('''
     CREATE TABLE IF NOT EXISTS dados(
-        nome TEXT, 
+        nome TEXT,
         idade INTEGER
     )
 ''')
@@ -91,7 +91,7 @@ con.close()
 
 
 
-# # Banco de Dados 2.1 - Clientes
+# # Banco de Dados 2.1 - Clientes com Loop
 import sqlite3
 
 con = sqlite3.connect('cadastro.db')
@@ -153,8 +153,9 @@ def sistema():
             print(listar_clentes())
 
             con.close()
- 
-sistema()          
+
+sistema()            
+
 
 
 # # Banco de Dados 3 - Clientes com Tkinter
@@ -212,18 +213,6 @@ btn =  tk.Button(root, text= 'Inserir', command=criar_cliente, width=15, font = 
 btn.grid(row=7, column=1, pady=10)
 
 root.mainloop()
-
-
-
-
-
-
-
-
- 
-
-
-
 
 
 
