@@ -2,6 +2,10 @@
 
 # # https://customtkinter.tomschimansky.com/
 
+# # CMD pip install customtkinter
+
+# # Executável CMD auto-py-to-exe
+
 # Exemplo 1 ( Professora )
 
 import customtkinter as ctk
@@ -34,11 +38,113 @@ app.mainloop()
 
 
 # Exemplo 2 ( Professora )
+import customtkinter as ctk
+import sqlite3
 
+ctk.set_appearance_mode('Dark')
+ctk.set_default_color_theme('blue')
 
+conn =  sqlite3.connect('dados.db')
+cursor = conn.cursor()
 
+cursor.execute('CREATE TABLE IF NOT EXISTS itens(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT )')
+conn.commit()
 
+select_id = None
 
+# funções
+def atualizar_lista():
+    for widget in scroll.winfo_children():
+        widget.destroy()
+    cursor.execute('SELECT  * FROM itens ORDER BY id DESC')
+    for item_id, nome in cursor.fetchall():
+        btn = ctk.CTkButton(
+        scroll,
+        text=nome,
+        anchor='w',
+        fg_color=('gray','gray20'),
+        text_color=('black', 'white'),
+        hover_color=('gray','gray30'),
+        command = lambda  i = item_id , n = nome: selecionar(i, n)
 
+        )
+        btn.pack(fill = 'x', padx = 2)    
+
+def selecionar(item_id, nome):
+    global select_id
+    select_id =  item_id
+    entry.delete(0, 'end')
+    entry.insert(0, nome)
+    btn_save.configure(text = 'Atualizar')
+
+def limpar():
+    global select_id
+    select_id =  None
+    entry.delete(0, 'end')
+    btn_save.configure(text =  'salvar')
+   
+
+def salvar():
+    txt =  entry.get().strip()
+    if not txt:
+        return
+    if select_id:
+        cursor.execute(
+            "UPDATE itens SET nome = ?  WHERE id = ?", (select_id)
+        ) 
+    else:
+        cursor.execute('INSERT INTO itens (nome) VALUES (?)', (txt,))
+    conn.commit()
+    # limpar()        
+    atualizar_lista()
+
+def excluir():
+    if select_id:
+        cursor.execute('DELETE FROM itens WHERE id = ? ', (select_id))
+        conn.commit()
+        conn.close()
+        limpar()
+        atualizar_lista()
+
+# interface 
+app = ctk.CTk()
+app.title('CRUD COM CUSTOM TKINTER')
+app.geometry('500x600')
+
+# inputs:
+entry =  ctk.CTkEntry(app, placeholder_text='DIGITE O ITÉM')
+entry.pack(padx= 20, pady = (20,10), fill = 'x')
+
+# sessão do  btn
+btn_frame = ctk.CTkFrame(app, fg_color='transparent')
+btn_frame.pack(padx = 20, fill = 'x')
+
+btn_save =  ctk.CTkButton(btn_frame, text= 'salvar' , width=100, command=salvar)
+btn_save.pack(side = 'left', expand = True, padx = 2)
+
+btn_delete =  ctk.CTkButton(btn_frame, text= 'deletar', 
+                            hover_color = 'yellow',
+                            fg_color='red',
+                            width =  100  ,                         
+                            command=excluir)
+btn_delete.pack(side = 'left', expand = True, padx = 2)
+
+btn_clear  =  ctk.CTkButton(btn_frame, text='limpar',
+                            hover_color = 'white',
+                            fg_color='green',
+                            width =  100 ,
+                            border_width=2,
+                            command=limpar
+                            ) 
+
+btn_clear.pack(side = 'left', expand = True, padx = 2)
+
+scroll = ctk.CTkScrollableFrame(app)
+scroll.pack(padx = 20, pady =  20, fill = 'both', expand  =  True)
+
+atualizar_lista()
+
+# listar .... 
+app.mainloop()
 
 
