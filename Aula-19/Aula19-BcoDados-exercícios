@@ -1,4 +1,90 @@
-#
+# # Exercícios 
+
+# # CRIE UM BANCO DE DADOS PARA UMA AGENCIA DE MARKETING 
+# # PRECISA  CADASTRAR OS LEADS DA AGENCIA:
+
+# # Banco de Dados 4 - Marketing com Tkinter
+import sqlite3
+import tkinter as tk
+from tkinter import messagebox
+
+con = sqlite3.connect('agmarketing.db')
+cursor = con.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS (cadleads 
+        id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        nome TEXT NOT NULL, 
+        idade INTEGER NOT NULL, 
+        email TEXT NOT NULL, 
+        endereco TEXT NOT NULL, 
+        trabalho TEXT, 
+        graduacao TEXT 
+   )
+''')
+
+# crud
+def criar_cadlead():
+    nome  = nome_input.get()
+    idade = idade_input.get()
+    email = email_input.get()
+    ender = ender_input.get()
+    trab  = trab_input.get()
+    grad  = grad_input.get()
+    cursor.execute('
+        INSERT INTO cadleads (nome, idade, email, endereco, trabalho, graduacao) values(? ,? ,? ,? ,? ,?)', (nome, idade, email, endereco, trabalho, graduacao))
+    con.commit()
+    messagebox.showinfo('', 'DADOS INSERIDOS COM SUCESSO')
+
+def listar_cadleads():
+    cursor.execute('SELECT * FROM clientes')
+    return cursor.fetchall()
+
+def atualizar_mail(id_cliente, novo_email):
+    cursor.execute('UPDATE clientes SET email=? WHERE id = ?', (novo_email, id_cliente))
+    con.commit()
+
+def deletar_cadlead(id_cliente):
+    cursor.execute('DELETE FROM clientes WHERE id = ?', (id_cliente,))
+    con.commit()
+
+root  =  tk.Tk()
+root.geometry('500x350')
+root.configure(bg = 'lightblue')
+root.iconbitmap('i.ico')
+
+tk.Label(root, text =  'AGÊNCIA DE MARKETING - CADASTRO DE LEADS:', font = ('system','15') , bg='lightblue').grid(row=1, column=0)
+
+tk.Label(root, text =  'nome:', bg='lightblue', font = ('system','10')).grid(row=3, column=0)
+nome_input = tk.Entry(root)
+nome_input.grid(row=3, column=1)  
+
+tk.Label(root, text =  'idade:', bg='lightblue', font = ('system','10')).grid(row=5, column=0)
+idade_input = tk.Entry(root)
+idade_input.grid(row=5, column=1)  
+
+tk.Label(root, text =  'e-mail:', bg='lightblue', font = ('system','10')).grid(row=7, column=0)
+email_input = tk.Entry(root)
+email_input.grid(row=7, column=1)  
+
+tk.Label(root, text =  'endereço:', bg='lightblue', font = ('system','10')).grid(row=9, column=0)
+ender_input = tk.Entry(root)
+ender_input.grid(row=9, column=1)  
+
+tk.Label(root, text =  'trabalho:', bg='lightblue', font = ('system','10')).grid(row=11, column=0)
+trab_input = tk.Entry(root)
+trab_input.grid(row=11, column=1)  
+
+tk.Label(root, text =  'graduação:', bg='lightblue', font = ('system','10')).grid(row=13, column=0)
+grad_input = tk.Entry(root)
+grad_input.grid(row=13, column=1)  
+
+btn =  tk.Button(root, text= 'Inserir', command=criar_cadlead, width=15, font = ('system','10'))
+btn.grid(row=7, column=17, pady=10)
+
+root.mainloop()
+
+
 
 
 
