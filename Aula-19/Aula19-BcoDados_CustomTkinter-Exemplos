@@ -1,0 +1,44 @@
+# # Banco de Dados com Custom Tkinter
+
+# # https://customtkinter.tomschimansky.com/
+
+# Exemplo 1 ( Professora )
+
+import customtkinter as ctk
+import sqlite3
+
+ctk.set_appearance_mode('Dark')
+ctk.set_default_color_theme('green')
+
+conn =  sqlite3.connect('dados.db')
+cursor = conn.cursor()
+
+cursor.execute('CREATE TABLE IF NOT EXISTS itens(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT )')
+conn.commit()
+
+select_id = None
+
+# funções
+
+# interface 
+app = ctk.CTk()
+app.title('CRUD COM CUSTOM TKINTER')
+app.geometry('500x600')
+
+# inputs:
+entry =  ctk.CTkEntry(app, placeholder_text='DIGITE O ITÉM')
+entry.pack(padx= 20, pady = (20,10), fill = 'x')
+
+app.mainloop()
+
+
+
+# Exemplo 2 ( Professora )
+
+
+
+
+
+
+
+
