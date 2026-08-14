@@ -101,7 +101,18 @@ if st.button('Calcular...') :
    else:
       print('Digite algo ')    
 
- 
+
+
+# # Exemplo 3
+
+# # Streamlit.io com SQLite3, com outras funções de exibição
+
+
+
+
+
+
+
 
 
 
