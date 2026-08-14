@@ -41,11 +41,11 @@ def listar_cadleads():
     return cursor.fetchall()
 
 def atualizar_mail(id_lead, novo_email):
-    cursor.execute('UPDATE cliencadleads SET email=? WHERE id = ?', (novo_email, id_lead))
+    cursor.execute('UPDATE cadleads SET email=? WHERE id = ?', (novo_email, id_lead))
     con.commit()
 
 def deletar_cadlead(id_lead):
-    cursor.execute('DELETE FROM clientes WHERE id = ?', (id_lead,))
+    cursor.execute('DELETE FROM cadleads WHERE id = ?', (id_lead))
     con.commit()
 
 root  =  tk.Tk()
