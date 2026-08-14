@@ -106,7 +106,7 @@ if st.button('Calcular...') :
 # # Exemplo 3
 
 # # Streamlit.io com SQLite3, com outras funções de exibição
-
+ 
 
 
 
