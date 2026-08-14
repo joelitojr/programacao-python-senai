@@ -9,16 +9,35 @@
 # # No terminal do VSCode, digitar: streamlit run mainstreamlit_io.py
 
 import streamlit as st
+import pandas as pd
 
-st.title('CALCULADORA')
+
+
+# st.title('CALCULADORA')
 # st.header('teste')
 
-n1 =  st.number_input('nº', value=0.1 )
+
+dados  =  pd.read_csv('dados.csv')
+
+
+df = pd.DataFrame(dados)
+
+
+st.dataframe(df)
+
+
+st.bar_chart(df, x = 'nome', y = 'nota')
+
+
+n1 =  st.number_input('nº' )
 n2 =  st.number_input('nº', value=0.0)
+
 
 if st.button('Calcular...') :   
    if n1 and n2:
       soma  =  n1 + n2
+
+
       st.info( soma)
    else:
       print('Digite algo ')    
