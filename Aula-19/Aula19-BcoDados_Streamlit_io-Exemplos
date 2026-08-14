@@ -59,7 +59,6 @@ def tabela():
     c.execute('''CREATE TABLE IF NOT EXISTS dados(
                 nome TEXT,
                 email TEXT
-                
                 )''')
 
     con.commit()
