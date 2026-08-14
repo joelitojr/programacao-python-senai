@@ -4,5 +4,7 @@
 
 # # CMD pip install streamlit
 
+# # import streamlit as st
 
+# # No terminal do VSCode, digitar: streamlit run mainstreamlit_io.py
 
