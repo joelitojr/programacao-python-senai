@@ -32,8 +32,7 @@ def criar_cadlead():
     ender = ender_input.get()
     trab  = trab_input.get()
     grad  = grad_input.get()
-    cursor.execute('
-        INSERT INTO cadleads (nome, idade, email, endereco, trabalho, graduacao) values(? ,? ,? ,? ,? ,?)', (nome, idade, email, endereco, trabalho, graduacao))
+    cursor.execute('INSERT INTO cadleads (nome, idade, email, endereco, trabalho, graduacao) values(? ,? ,? ,? ,? ,?)', (nome, idade, email, endereco, trabalho, graduacao))
     con.commit()
     messagebox.showinfo('', 'DADOS INSERIDOS COM SUCESSO')
 
