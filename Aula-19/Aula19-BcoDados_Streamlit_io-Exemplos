@@ -11,6 +11,9 @@
 import streamlit as st
 import pandas as pd
 
+
+# # Exemplo 1
+
 # st.title('CALCULADORA')
 # st.header('teste')
 
@@ -28,3 +31,16 @@ if st.button('Calcular...') :
       st.info( soma)
    else:
       print('Digite algo ')    
+
+
+
+# # Exemplo 2
+
+# # Streamlit.io com SQLite3
+
+
+
+
+
+
+
