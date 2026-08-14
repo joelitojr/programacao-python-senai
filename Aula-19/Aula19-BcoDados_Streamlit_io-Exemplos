@@ -8,6 +8,9 @@
 
 # # No terminal do VSCode, digitar: streamlit run mainstreamlit_io.py
 
+# # Para enviar para nuvem / web , através de criação de diretório específico no Githup com o código e arquivo "main.py". 
+# # Depois acessar com a conta do GitHub e fazer deploy do arquivo (página criada) da branche (arquivo "main.py")
+
 import streamlit as st
 import pandas as pd
 
