@@ -8,20 +8,21 @@ import sqlite3
 import tkinter as tk
 from tkinter import messagebox
 
-con = sqlite3.connect('agmarketing.db')
+con =  sqlite3.connect('agmarketing.db')
 cursor = con.cursor()
 
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS (cadleads 
-        id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        nome TEXT NOT NULL, 
-        idade INTEGER NOT NULL, 
-        email TEXT NOT NULL, 
-        endereco TEXT NOT NULL, 
-        trabalho TEXT, 
-        graduacao TEXT 
-   )
+    CREATE TABLE IF NOT EXISTS cadleads(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        idade INTEGER NOT NULL,
+        email TEXT NOT NULL,
+        endereco TEXT NOT NULL,
+        trabalho TEXT,
+        graduacao TEXT
+    )
 ''')
+con.commit()
 
 # crud
 def criar_cadlead():
