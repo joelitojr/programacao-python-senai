@@ -42,7 +42,7 @@ if st.button('Calcular...') :
 
 # # Streamlit.io com SQLite3
 
-
+ 
 
 
 
