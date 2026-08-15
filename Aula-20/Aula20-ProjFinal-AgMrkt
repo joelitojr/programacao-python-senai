@@ -4,6 +4,9 @@
 
 # # Agência de Marketing
 
+
+# # Exemplo da Professora
+
 import sqlite3 # banco de dados
 import tkinter as tk # interface 
 from tkinter import messagebox # caixas de mensagens
@@ -147,3 +150,128 @@ mostrar_usuario()
 
 
 janela.mainloop()
+
+
+# # python custom tkinter sqlite3 ideia muito simples para sistema básico de gerenciamento de acervo de locadora de vídeo
+
+import sqlite3
+import customtkinter as ctk
+from tkinter import messagebox
+
+# Configuração inicial do CustomTkinter
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("blue")
+
+class LocadoraApp(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Locadora Retro - Gerenciador de Acervo")
+        self.geometry("500x550")
+        self.resizable(False, False)
+
+        # Inicializa o Banco de Dados
+        self.init_db()
+
+        # --- Componentes da Interface (UI) ---
+        
+        # Título do App
+        self.lbl_titulo_app = ctk.CTkLabel(self, text="🎬 Acervo da Locadora", font=ctk.CTkFont(size=24, weight="bold"))
+        self.lbl_titulo_app.pack(pady=20)
+
+        # Container para o Formulário
+        self.frame_form = ctk.CTkFrame(self)
+        self.frame_form.pack(pady=10, padx=20, fill="x")
+
+        self.lbl_nome = ctk.CTkLabel(self.frame_form, text="Título do Filme:")
+        self.lbl_nome.grid(row=0, column=0, padx=10, pady=10, sticky="w")
+        
+        self.txt_nome = ctk.CTkEntry(self.frame_form, placeholder_text="Ex: Matrix", width=250)
+        self.txt_nome.grid(row=0, column=1, padx=10, pady=10)
+
+        self.lbl_genero = ctk.CTkLabel(self.frame_form, text="Gênero:")
+        self.lbl_genero.grid(row=1, column=0, padx=10, pady=10, sticky="w")
+        
+        self.txt_genero = ctk.CTkEntry(self.frame_form, placeholder_text="Ex: Ficção Científica", width=250)
+        self.txt_genero.grid(row=1, column=1, padx=10, pady=10)
+
+        # Botão de Salvar
+        self.btn_salvar = ctk.CTkButton(self, text="Adicionar ao Acervo", command=self.salvar_filme)
+        self.btn_salvar.pack(pady=15)
+
+        # Container para a Lista de Filmes (Acervo)
+        self.lbl_subtitulo = ctk.CTkLabel(self, text="Filmes Disponíveis:", font=ctk.CTkFont(size=16, weight="bold"))
+        self.lbl_subtitulo.pack(pady=5)
+
+        self.frame_lista = ctk.CTkTextbox(self, width=460, height=200, activate_scrollbars=True)
+        self.frame_lista.pack(pady=10, padx=20)
+        self.frame_lista.configure(state="disabled") # Bloqueia digitação direta
+
+        # Atualiza a lista logo ao abrir o app
+        self.atualizar_lista()
+
+    # --- Funções do Banco de Dados e Lógica ---
+
+    def init_db(self):
+        """Cria o banco de dados e a tabela se não existirem."""
+        conn = sqlite3.connect("locadora.db")
+        cursor = conn.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS filmes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                titulo TEXT NOT NULL,
+                genero TEXT NOT NULL
+            )
+        """)
+        conn.commit()
+        conn.close()
+
+    def salvar_filme(self):
+        """Coleta os dados dos campos e salva no SQLite3."""
+        titulo = self.txt_nome.get().strip()
+        genero = self.txt_genero.get().strip()
+
+        if not titulo or not genero:
+            messagebox.showwarning("Aviso", "Por favor, preencha todos os campos!")
+            return
+
+        conn = sqlite3.connect("locadora.db")
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO filmes (titulo, genero) VALUES (?, ?)", (titulo, genero))
+        conn.commit()
+        conn.close()
+
+        # Limpa os campos de texto
+        self.txt_nome.delete(0, "end")
+        self.txt_genero.delete(0, "end")
+
+        # Atualiza a visualização
+        self.atualizar_lista()
+        messagebox.showinfo("Sucesso", f"'{titulo}' adicionado com sucesso!")
+
+    def atualizar_lista(self):
+        """Busca os filmes no banco e renderiza no campo de texto."""
+        # Libera a caixa de texto temporariamente para escrita
+        self.frame_lista.configure(state="normal")
+        self.frame_lista.delete("0.0", "end")
+
+        conn = sqlite3.connect("locadora.db")
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, titulo, genero FROM filmes ORDER BY id DESC")
+        filmes = cursor.fetchall()
+        conn.close()
+
+        if not filmes:
+            self.frame_lista.insert("0.0", "Nenhum filme cadastrado no acervo.")
+        else:
+            for filme in filmes:
+                linha = f"ID: {filme[0]} | 🎬 {filme[1]} — 🏷️ {filme[2]}\n"
+                self.frame_lista.insert("end", linha)
+
+        # Bloqueia novamente para que o usuário não edite manualmente
+        self.frame_lista.configure(state="disabled")
+
+if __name__ == "__main__":
+    app = LocadoraApp()
+    app.mainloop()
+
