@@ -271,6 +271,132 @@ class LocadoraApp(ctk.CTk):
         # Bloqueia novamente para que o usuário não edite manualmente
         self.frame_lista.configure(state="disabled")
 
+
+
+# # sistema básico de gerenciamento de acervo de locadora de vídeo
+
+import sqlite3
+import customtkinter as ctk
+from tkinter import messagebox
+
+# --- Funções do Banco de Dados e Lógica ---
+def conectar():
+    return sqlite3.connect("locadora.db")
+
+def init_db(locadora):
+    """Cria o banco de dados e a tabela se não existirem."""
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS filmes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            titulo TEXT NOT NULL,
+            genero TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+# def salvar_filme(locadora):
+def salvar_filme():
+    """Coleta os dados dos campos e salva no SQLite3."""
+    titulo = locadora.txt_nome.get().strip()
+    genero = locadora.txt_genero.get().strip()
+
+    if not titulo or not genero:
+        messagebox.showwarning("Aviso", "Por favor, preencha todos os campos!")
+        return
+
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO filmes (titulo, genero) VALUES (?, ?)", (titulo, genero))
+    conn.commit()
+    conn.close()
+
+    # Limpa os campos de texto
+    locadora.txt_nome.delete(0, "end")
+    locadora.txt_genero.delete(0, "end")
+
+    # Atualiza a visualização
+    locadora.atualizar_lista()
+    messagebox.showinfo("Sucesso", f"'{titulo}' adicionado com sucesso!")
+
+# def atualizar_lista(locadora):
+def atualizar_lista():
+    """Busca os filmes no banco e renderiza no campo de texto."""
+    # Libera a caixa de texto temporariamente para escrita
+    locadora.frame_lista.configure(state="normal")
+    locadora.frame_lista.delete("0.0", "end")
+
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, titulo, genero FROM filmes ORDER BY id DESC")
+    filmes = cursor.fetchall()
+    conn.close()
+
+    if not filmes:
+        locadora.frame_lista.insert("0.0", "Nenhum filme cadastrado no acervo.")
+    else:
+        for filme in filmes:
+            # linha = f"ID: {filme[0]} | 🎬 {filme[1]} — 🏷️ {filme[2]}\n"
+            linha = f"ID: {filme[0]} | {filme[1]} — {filme[2]}\n"
+            locadora.frame_lista.insert("end", linha)
+
+
+# Configuração inicial do CustomTkinter
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("blue")
+
+
+locadora = ctk.CTk()
+
+locadora.title("Locadora Retro - Gerenciador de Acervo")
+locadora.geometry("500x550")
+locadora.resizable(False, False)
+
+
+# Título da aplicação
+locadora.lbl_titulo_app = ctk.CTkLabel(locadora, text="Acervo da Locadora", font=ctk.CTkFont(size=24, weight="bold"))
+locadora.lbl_titulo_app.pack(pady=20)
+
+# Formulário
+locadora.frame_form = ctk.CTkFrame(locadora)
+locadora.frame_form.pack(pady=10, padx=20, fill="x")
+
+locadora.lbl_nome = ctk.CTkLabel(locadora.frame_form, text="Título do Filme:")
+locadora.lbl_nome.grid(row=0, column=0, padx=10, pady=10, sticky="w")
+
+locadora.txt_nome = ctk.CTkEntry(locadora.frame_form, placeholder_text="Ex: Matrix", width=250)
+locadora.txt_nome.grid(row=0, column=1, padx=10, pady=10)
+
+locadora.lbl_genero = ctk.CTkLabel(locadora.frame_form, text="Gênero:")
+locadora.lbl_genero.grid(row=1, column=0, padx=10, pady=10, sticky="w")
+
+locadora.txt_genero = ctk.CTkEntry(locadora.frame_form, placeholder_text="Ex: Ficção Científica", width=250)
+locadora.txt_genero.grid(row=1, column=1, padx=10, pady=10)
+
+# Botão de Salvar
+locadora.btn_salvar = ctk.CTkButton(locadora, text="Adicionar ao Acervo", command=salvar_filme)
+locadora.btn_salvar.pack(pady=15)
+
+# Lista de Filmes (Acervo)
+locadora.lbl_subtitulo = ctk.CTkLabel(locadora, text="Filmes Disponíveis:", font=ctk.CTkFont(size=16, weight="bold"))
+locadora.lbl_subtitulo.pack(pady=5)
+
+locadora.frame_lista = ctk.CTkTextbox(locadora, width=460, height=200, activate_scrollbars=True)
+locadora.frame_lista.pack(pady=10, padx=20)
+locadora.frame_lista.configure(state="disabled") # Bloqueia digitação direta
+
+# Atualiza a lista logo ao abrir 
+atualizar_lista()
+
+# Bloqueia novamente para que o usuário não edite manualmente
+locadora.frame_lista.configure(state="disabled")
+
+locadora.mainloop()
+
+
+
 if __name__ == "__main__":
     app = LocadoraApp()
     app.mainloop()
