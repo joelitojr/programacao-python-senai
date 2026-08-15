@@ -273,7 +273,7 @@ class LocadoraApp(ctk.CTk):
 
 
 
-
+ 
 # # sistema básico de gerenciamento de acervo de locadora de vídeo
 
 import sqlite3
