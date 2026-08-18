@@ -156,6 +156,8 @@
 
 # # sistema básico de gerenciamento de acervo de locadora de vídeo
 
+# # sistema básico de gerenciamento de acervo de locadora de vídeo
+
 import sqlite3
 import customtkinter as ctk
 from tkinter import messagebox
@@ -164,54 +166,40 @@ from tkinter import messagebox
 def conectar():
     return sqlite3.connect("locadora.db")
 
-def init_db(locadora):
+def init_db():
     """Cria o banco de dados e a tabela se não existirem."""
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("""
+    cursor.execute('''
         CREATE TABLE IF NOT EXISTS filmes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo TEXT NOT NULL,
-            genero TEXT NOT NULL
+            genero TEXT NOT NULL,
+            classind INTERGER NOT NULL,
+            direcao TEXT,
+            estudio TEXT
         )
-    """)
+    ''')
     conn.commit()
     conn.close()
 
-# def salvar_filme(locadora):
-def salvar_filme():
-    """Coleta os dados dos campos e salva no SQLite3."""
-    titulo = locadora.txt_nome.get().strip()
-    genero = locadora.txt_genero.get().strip()
-
-    if not titulo or not genero:
-        messagebox.showwarning("Aviso", "Por favor, preencha todos os campos!")
-        return
-
-    conn = conectar()
-    cursor = conn.cursor()
-    cursor.execute("INSERT INTO filmes (titulo, genero) VALUES (?, ?)", (titulo, genero))
-    conn.commit()
-    conn.close()
-
-    # Limpa os campos de texto
-    locadora.txt_nome.delete(0, "end")
-    locadora.txt_genero.delete(0, "end")
-
-    # Atualiza a visualização
-    locadora.atualizar_lista()
-    messagebox.showinfo("Sucesso", f"'{titulo}' adicionado com sucesso!")
-
-# def atualizar_lista(locadora):
+# Exibir registros
 def atualizar_lista():
-    """Busca os filmes no banco e renderiza no campo de texto."""
+    """Busca os filmes no banco e carrega/exibe no campo de texto."""
     # Libera a caixa de texto temporariamente para escrita
     locadora.frame_lista.configure(state="normal")
     locadora.frame_lista.delete("0.0", "end")
 
+    # Limpa os campos de texto
+    locadora.txt_nome.delete(0, "end")
+    locadora.txt_genero.delete(0, "end")
+    locadora.txt_classind.delete(0, "end")
+    locadora.txt_direcao.delete(0, "end")
+    locadora.txt_estudio.delete(0, "end")
+
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("SELECT id, titulo, genero FROM filmes ORDER BY id DESC")
+    cursor.execute("SELECT id, titulo, genero, classind, direcao, estudio FROM filmes ORDER BY id DESC")
     filmes = cursor.fetchall()
     conn.close()
 
@@ -219,9 +207,103 @@ def atualizar_lista():
         locadora.frame_lista.insert("0.0", "Nenhum filme cadastrado no acervo.")
     else:
         for filme in filmes:
-            # linha = f"ID: {filme[0]} | 🎬 {filme[1]} — 🏷️ {filme[2]}\n"
-            linha = f"ID: {filme[0]} | {filme[1]} — {filme[2]}\n"
+            linha = f"ID: {filme[0]} | {filme[1]} — {filme[2]} — {filme[3]} — {filme[4]} — {filme[5]}\n"
             locadora.frame_lista.insert("end", linha)
+
+# Incluir registros
+def incluir_filme():
+    """Coleta os dados dos campos e salva no SQLite3."""
+    titulo = locadora.txt_nome.get().strip()
+    genero = locadora.txt_genero.get().strip()
+    classind = locadora.txt_classind.get().strip()
+    direcao = locadora.txt_direcao.get().strip()
+    estudio = locadora.txt_estudio.get().strip()
+
+    if not titulo or not genero or not classind or not direcao or not estudio:
+        messagebox.showwarning("Aviso", "Por favor, preencha todos os campos!")
+        return
+
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO filmes (titulo, genero, classind, direcao, estudio) VALUES (?, ?, ?, ?, ?)', (titulo, genero, classind, direcao, estudio))
+    conn.commit()
+    conn.close()
+
+    # # Limpa os campos de texto
+    # locadora.txt_nome.delete(0, "end")
+    # locadora.txt_genero.delete(0, "end")
+    # locadora.txt_classind.delete(0, "end")
+    # locadora.txt_direcao.delete(0, "end")
+    # locadora.txt_estudio.delete(0, "end")
+
+    # Atualiza a visualização
+    atualizar_lista()
+    messagebox.showinfo("Sucesso", f"'{titulo}' incluido!")
+
+# Atualizar registros 
+def editar_filme():
+    sel_atu = tree.selection()
+    if not sel_atu:
+            messagebox.showwarning("Aviso", "Nenhum filme foi selecionado para atualização!")
+            return
+
+    id = tree.item(sel_atu)['values'][0]
+    novo_titulo = locadora.txt_nome.get().strip()
+    novo_genero = locadora.txt_genero.get().strip()
+    novo_classind = locadora.txt_classind.get().strip()
+    novo_direcao = locadora.txt_direcao.get().strip()
+    novo_estudio = locadora.txt_estudio.get().strip()
+
+    if not novo_titulo and not novo_genero and not novo_classind and not novo_direcao and not novo_estudio:
+        messagebox.showwarning("Aviso", "Nenhum campo foi alterado!")
+        return
+
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute('UPDATE filmes SET titulo=? , genero =? , classind=? , direcao=? , estudio=? WHERE id = ?', (novo_titulo, novo_genero, novo_classind, novo_direcao, novo_estudio))
+    conn.commit()
+    conn.close()
+
+    # # Limpa os campos de texto
+    # locadora.txt_nome.delete(0, "end")
+    # locadora.txt_genero.delete(0, "end")
+    # locadora.txt_classind.delete(0, "end")
+    # locadora.txt_direcao.delete(0, "end")
+    # locadora.txt_estudio.delete(0, "end")
+
+    # Atualiza a visualização
+    atualizar_lista()
+    messagebox.showinfo("Sucesso", f"'{titulo}' atualizado!")
+
+# Excluir registros 
+def excluir_filme():
+    sel_del = tree.selection()
+    if not sel_del:
+            messagebox.showwarning("Aviso", "Nenhum filme foi selecionado para exclusão!")
+            return
+
+    id = tree.item(sel_del)['values'][0]
+
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM filmes WHERE id = ?', (id,))
+    conn.commit()
+    conn.close()
+
+    # # Limpa os campos de texto
+    # locadora.txt_nome.delete(0, "end")
+    # locadora.txt_genero.delete(0, "end")
+    # locadora.txt_classind.delete(0, "end")
+    # locadora.txt_direcao.delete(0, "end")
+    # locadora.txt_estudio.delete(0, "end")
+
+    # Atualiza a visualização
+    atualizar_lista()
+    messagebox.showinfo("Sucesso", f"'{titulo}' excluido!")
+
+
+# Criar Banco e Tabela
+init_db()
 
 
 # Configuração inicial do CustomTkinter
@@ -256,9 +338,37 @@ locadora.lbl_genero.grid(row=1, column=0, padx=10, pady=10, sticky="w")
 locadora.txt_genero = ctk.CTkEntry(locadora.frame_form, placeholder_text="Ex: Ficção Científica", width=250)
 locadora.txt_genero.grid(row=1, column=1, padx=10, pady=10)
 
-# Botão de Salvar
-locadora.btn_salvar = ctk.CTkButton(locadora, text="Adicionar ao Acervo", command=salvar_filme)
-locadora.btn_salvar.pack(pady=15)
+locadora.lbl_classind = ctk.CTkLabel(locadora.frame_form, text="Classif. indicativa:")
+locadora.lbl_classind.grid(row=2, column=0, padx=10, pady=10, sticky="w")
+
+locadora.txt_classind = ctk.CTkEntry(locadora.frame_form, placeholder_text="Ex: 16", width=250)
+locadora.txt_classind.grid(row=2, column=1, padx=10, pady=10)
+
+locadora.lbl_direcao = ctk.CTkLabel(locadora.frame_form, text="Direção:")
+locadora.lbl_direcao.grid(row=3, column=0, padx=10, pady=10, sticky="w")
+
+locadora.txt_direcao = ctk.CTkEntry(locadora.frame_form, placeholder_text="Ex: Spilberg", width=250)
+locadora.txt_direcao.grid(row=3, column=1, padx=10, pady=10)
+
+locadora.lbl_estudio = ctk.CTkLabel(locadora.frame_form, text="Estúdio:")
+locadora.lbl_estudio.grid(row=4, column=0, padx=10, pady=10, sticky="w")
+
+locadora.txt_estudio = ctk.CTkEntry(locadora.frame_form, placeholder_text="Ex: Disney", width=250)
+locadora.txt_estudio.grid(row=4, column=1, padx=10, pady=10)
+
+
+# Botão de Inclusão
+btn_incluir = ctk.CTkButton(locadora, text="Adicionar ao Acervo", command=incluir_filme)
+btn_incluir.pack(pady=15)
+
+# Botão de Atualização
+btn_editar = ctk.CTkButton(locadora, text="Atualizar filme", command=editar_filme)
+btn_editar.pack(pady=15)
+
+# Botão de Atualização
+btn_excluir = ctk.CTkButton(locadora, text="Excluir filme", command=excluir_filme)
+btn_excluir.pack(pady=15)
+
 
 # Lista de Filmes (Acervo)
 locadora.lbl_subtitulo = ctk.CTkLabel(locadora, text="Filmes Disponíveis:", font=ctk.CTkFont(size=16, weight="bold"))
@@ -268,14 +378,13 @@ locadora.frame_lista = ctk.CTkTextbox(locadora, width=460, height=200, activate_
 locadora.frame_lista.pack(pady=10, padx=20)
 locadora.frame_lista.configure(state="disabled") # Bloqueia digitação direta
 
+
 # Atualiza a lista logo ao abrir 
 atualizar_lista()
+
 
 # Bloqueia novamente para que o usuário não edite manualmente
 locadora.frame_lista.configure(state="disabled")
 
 locadora.mainloop()
-
-
-
 
